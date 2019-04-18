@@ -1,0 +1,122 @@
+{% extends 'adminlte_base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block page_style %}
+  <style>
+  .asteriskField {
+    color: red;
+  }
+  h3 {
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: lightblue;
+  }
+  .btn-group {
+    padding-top: 20px;
+  }
+  </style>
+{% endblock %}
+
+{% block page_content %}
+  {% load crispy_forms_tags %}
+  <div class="row">
+    <div class="col-md-12 text-md-center">
+      <h1 style="text-align: center;">个人简历</h1>
+      <div class="alert alert-warning text-md-left" role="alert">
+        请如实填写，如果发现虚假隐瞒信息，将拉入黑名单。情节严重者，将会告知所有合作单位！
+      </div>
+      <form action="{% url 'profile' %}" method="post" class="text-md-left">
+        <h3 class="text-md-center" style="text-align: center;">基本信息</h3>
+        {% crispy form %}
+        <h3 class="text-md-center" style="text-align: center;">教育经历</h3>
+        <div class="alert alert-info text-md-left" role="alert">
+          请按照学历由高到低填写，高中及以下学历不需要填写！例如先填写研究生学历，再填写本科学历
+        </div>
+          {% crispy education_forms education_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加学历信息</button>
+        <h3 class="text-md-center" style="text-align: center;">培训经历</h3>
+        {% crispy training_experience_form training_experience_forms_helper %}
+        <button type="button"  class="btn btn-primary btn-block mt-2 btn-add">添加培训经历</button>
+        <h3 class="text-md-center" style="text-align: center;">工作经历</h3>
+        <div class="alert alert-info text-md-left" role="alert">
+          包含工作经历、实习经历、社会实践经历和校园实践经历等
+        </div>
+        {% crispy work_experience_forms work_experience_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加工作经历</button>
+        <h3 class="text-md-center" style="text-align: center;">项目经历</h3>
+        {% crispy project_forms project_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加项目经历</button>
+        <h3 class="text-md-center" style="text-align: center;">获奖/证书情况</h3>
+        {% crispy certification_forms certification_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加获奖/证书情况</button>
+        <h3 class="text-md-center" style="text-align: center;">技能水平</h3>
+        {% crispy skill_forms skill_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加技能水平</button>
+        <div class="btn-group d-flex" role="group" style="width: 100%">
+          <input type="submit" name="save-profile" class="btn btn-success w-100" style="width: 50%" value="保存">
+          <input type="submit" name="submit-profile" class="btn btn-warning w-100" style="width: 50%" value="提交（提交后不可修改）">
+        </div>
+{#        <button type="submit" class="btn btn-success btn-block">提交</button>#}
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_script %}
+  <script>
+    function deleteForm(prefix, btn) {
+        btn.next().find("input[type='checkbox']").prop("checked", true);
+        btn.parent().hide();
+    }
+
+    $(document).on('click', '.btn-delete', function(e) {
+        e.preventDefault();
+        deleteForm($(this).parent().attr("class"), $(this));
+        return false;
+    });
+
+    $(document).on('focus', '.dateinput', function(e){
+        $(this).datepicker({format: 'yyyy-mm-dd'});
+    });
+
+    $(document).on('click', '.btn-add', function (e) {
+       addForm($(this));
+    });
+
+    function addForm(btn){
+        $(btn).prev().clone().insertBefore($(btn));
+        $(btn).prev().show();
+        $(btn).prev().find(":input[type!='button']").each(function () {
+            $(this).val('');
+            $(this).prop("checked", false);
+        });
+
+        var prefix = $(btn).prev().attr("class");
+        var forms = $('.'.concat(prefix));
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+
+        for (var i = 0, formCount = forms.length; i < formCount; i++) {
+            updateFormElementIndex($(forms.get(i)), prefix, i);
+        }
+    }
+
+    function updateFormElementIndex(el, prefix, ndx) {
+        var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        var replacement = prefix + '-' + ndx;
+
+        $(el).find('.form-group').each(function(){
+            this.id = this.id.replace(id_regex, replacement);
+        });
+
+        $(el).find('.col-form-label').each(function(){
+            $(this).attr('for', $(this).attr('for').replace(id_regex, replacement));
+        });
+
+        $(el).find(':input').each(function(){
+            if (this.id) this.id = this.id.replace(id_regex, replacement);
+            if (this.name) this.name = this.name.replace(id_regex, replacement);
+        });
+    }
+  </script>
+{% endblock %}

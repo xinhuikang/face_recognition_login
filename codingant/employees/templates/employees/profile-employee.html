@@ -1,0 +1,108 @@
+{% extends 'adminlte_base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block page_style %}
+  <style>
+  .asteriskField {
+    color: red;
+  }
+  h3 {
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: lightblue;
+  }
+  .btn-group {
+    padding-top: 20px;
+  }
+  </style>
+{% endblock %}
+
+{% block page_content %}
+  {% load crispy_forms_tags %}
+  <div class="row">
+    <div class="col-md-12 text-md-center">
+      <h1>补充员工信息</h1>
+      <form action="{% url 'employee_profile' %}" method="post" class="text-md-left" enctype="multipart/form-data">
+        <h3 class="text-md-center" style="text-align: center;">身份证信息</h3>
+        {% crispy id_card_form %}
+        <h3 class="text-md-center" style="text-align: center;">银行卡信息</h3>
+        {% crispy card_forms card_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加银行卡信息</button>
+        <h3 class="text-md-center" style="text-align: center;">联系人信息</h3>
+        {% crispy contact_forms contact_forms_helper %}
+        <button type="button" class="btn btn-primary btn-block mt-2 btn-add">添加联系人信息</button>
+        <div class="btn-group d-flex" role="group" style="width: 100%">
+          <input type="submit" name="save-profile" class="btn btn-success w-100" style="width: 50%" value="保存">
+          <input type="submit" name="submit-profile" class="btn btn-warning w-100" style="width: 50%" value="提交（提交后不可修改）">
+        </div>
+{#        <button type="submit" class="btn btn-success btn-block">提交</button>#}
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_script %}
+  <script>
+    function deleteForm(prefix, btn) {
+        btn.next().find("input[type='checkbox']").prop("checked", true);
+        btn.parent().hide();
+    }
+
+    $(document).on('click', '.btn-delete', function(e) {
+        e.preventDefault();
+        deleteForm($(this).parent().attr("class"), $(this));
+        return false;
+    });
+
+    $(document).on('focus', '.dateinput', function(e){
+        $(this).datepicker({format: 'yyyy-mm-dd'});
+    });
+
+    $(document).on('click', '.btn-add', function (e) {
+       addForm($(this));
+    });
+
+    function addForm(btn){
+        $(btn).prev().clone().insertBefore($(btn));
+        $(btn).prev().show();
+        $(btn).prev().find(":input[type!='button']").each(function () {
+            $(this).val('');
+            $(this).prop("checked", false);
+        });
+
+        var prefix = $(btn).prev().attr("class");
+        var forms = $('.'.concat(prefix));
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+
+        for (var i = 0, formCount = forms.length; i < formCount; i++) {
+            updateFormElementIndex($(forms.get(i)), prefix, i);
+        }
+    }
+
+    function updateFormElementIndex(el, prefix, ndx) {
+        var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        var replacement = prefix + '-' + ndx;
+
+        $(el).find('.form-group').each(function(){
+            this.id = this.id.replace(id_regex, replacement);
+        });
+
+        $(el).find('.col-form-label').each(function(){
+            $(this).attr('for', $(this).attr('for').replace(id_regex, replacement));
+        });
+
+        $(el).find(':input').each(function(){
+            if (this.id) this.id = this.id.replace(id_regex, replacement);
+            if (this.name) this.name = this.name.replace(id_regex, replacement);
+        });
+    }
+  </script>
+{% endblock %}
+  {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+
+  {% endfor %}
