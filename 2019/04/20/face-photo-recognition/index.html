@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="本节总结下人脸图片识别登录的流程；">
+<meta name="description" content="流程     本节总结下人脸图片识别登录的流程，分为以下几步：         用户进入登录界面       -&amp;gt;点击人脸识别登录       -&amp;gt;用户截取图片，点击上传       -&amp;gt;后台接收图片，读取人员数据库内容，逐一对比       -&amp;gt;对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因       -&amp;gt;前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="face_photo_recognition">
 <meta property="og:url" content="http://xinhuikang.github.io/2019/04/20/face-photo-recognition/index.html">
 <meta property="og:site_name" content="face_reco_login">
-<meta property="og:description" content="本节总结下人脸图片识别登录的流程；">
+<meta property="og:description" content="流程     本节总结下人脸图片识别登录的流程，分为以下几步：         用户进入登录界面       -&amp;gt;点击人脸识别登录       -&amp;gt;用户截取图片，点击上传       -&amp;gt;后台接收图片，读取人员数据库内容，逐一对比       -&amp;gt;对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因       -&amp;gt;前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-20T01:32:34.108Z">
+<meta property="og:updated_time" content="2019-04-20T02:59:31.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="face_photo_recognition">
-<meta name="twitter:description" content="本节总结下人脸图片识别登录的流程；">
+<meta name="twitter:description" content="流程     本节总结下人脸图片识别登录的流程，分为以下几步：         用户进入登录界面       -&amp;gt;点击人脸识别登录       -&amp;gt;用户截取图片，点击上传       -&amp;gt;后台接收图片，读取人员数据库内容，逐一对比       -&amp;gt;对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因       -&amp;gt;前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片">
 
 
 
@@ -291,6 +291,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -309,8 +314,19 @@
       
 
       
-        <pre>
-    本节总结下人脸图片识别登录的流程；
+        <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><pre>
+    本节总结下人脸图片识别登录的流程，分为以下几步：
+        用户进入登录界面
+      ->点击人脸识别登录
+      ->用户截取图片，点击上传
+      ->后台接收图片，读取人员数据库内容，逐一对比
+      ->对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因
+      ->前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片
+</pre>
+
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre>
+    首先，在登录界面加入跳转代码
+
 </pre>
 
       
@@ -404,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -448,6 +473,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -484,7 +525,34 @@
 
 
 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+
+
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
