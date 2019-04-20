@@ -285,6 +285,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/face_recognition_login/2019/04/19/results-show/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/face_recognition_login/2019/04/19/results-show/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -350,6 +360,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/face_recognition_login/2019/04/20/face-photo-recognition/" rel="prev" title="face_photo_recognition">
+                face_photo_recognition <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -376,6 +390,14 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">Show comments from Gitment</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
 
   
 
@@ -425,7 +447,7 @@
               
                 <a href="/face_recognition_login/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -646,6 +668,47 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'xinhuikang',
+            repo: 'https://github.com/xinhuikang/face_recognition_login',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '0ca22f9b2781e4ae4c8c4f43578b8756d9c75e41',
+            
+                client_id: '9402e89d94ea8769190f'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
