@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="face_reco_login">
 <meta property="og:description" content="流程     本节总结下人脸图片识别登录的流程，分为以下几步：         用户进入登录界面       -&amp;gt;点击人脸识别登录       -&amp;gt;用户截取图片，点击上传       -&amp;gt;后台接收图片，读取人员数据库内容，逐一对比       -&amp;gt;对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因       -&amp;gt;前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-20T02:59:31.592Z">
+<meta property="og:updated_time" content="2019-04-20T03:45:38.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="face_photo_recognition">
 <meta name="twitter:description" content="流程     本节总结下人脸图片识别登录的流程，分为以下几步：         用户进入登录界面       -&amp;gt;点击人脸识别登录       -&amp;gt;用户截取图片，点击上传       -&amp;gt;后台接收图片，读取人员数据库内容，逐一对比       -&amp;gt;对比结果处理，满足阈值则通过检测，返回登录用户名，反之，返回失败原因       -&amp;gt;前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片">
@@ -324,10 +324,7 @@
       ->前端接收返回结果，成功，则跳转进入系统；失败则要求用户重传人脸图片
 </pre>
 
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre>
-    首先，在登录界面加入跳转代码
-
-</pre>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>&emsp;&emsp;首先，在登录界面加入跳转代码<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;/face/login/&quot;&gt;人脸登录&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
