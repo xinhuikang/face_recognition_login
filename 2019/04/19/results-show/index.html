@@ -87,15 +87,14 @@
 <meta property="og:description" content="效果展示&amp;emsp;&amp;emsp;登录界面：      &amp;emsp;&amp;emsp;人脸图片识别登录：      &amp;emsp;&amp;emsp;人脸识别登录成功：            &amp;emsp;&amp;emsp;注册页面：       &amp;emsp;&amp;emsp;随机动作指令之眨眼两次检测：             人脸图片识别登录    虽然可以成功登录了，但是性能却不好；    首先是人脸图片识别登录，我们看下">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/login.png">
-<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/face_login.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/face_login-success0.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/face_login-success1.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/register.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/blink.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/blink_twice.png">
 <meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/img_write.png">
-<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/blink_time.png">
-<meta property="og:updated_time" content="2019-04-19T12:53:36.544Z">
+<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/19/results-show/blink_video_stream.png">
+<meta property="og:updated_time" content="2019-04-23T01:38:15.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="results_show">
 <meta name="twitter:description" content="效果展示&amp;emsp;&amp;emsp;登录界面：      &amp;emsp;&amp;emsp;人脸图片识别登录：      &amp;emsp;&amp;emsp;人脸识别登录成功：            &amp;emsp;&amp;emsp;注册页面：       &amp;emsp;&amp;emsp;随机动作指令之眨眼两次检测：             人脸图片识别登录    虽然可以成功登录了，但是性能却不好；    首先是人脸图片识别登录，我们看下">
@@ -324,13 +323,13 @@
       
 
       
-        <h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>&emsp;&emsp;登录界面：<br>      <img src="/face_recognition_login/2019/04/19/results-show/login.png" title="登录"><br>&emsp;&emsp;人脸图片识别登录：<br>      <img src="/face_recognition_login/2019/04/19/results-show/face_login.png" title="人脸识别登录"><br>&emsp;&emsp;人脸识别登录成功：<br>      <img src="/face_recognition_login/2019/04/19/results-show/face_login-success0.png" title="登录成功"><br>      <img src="/face_recognition_login/2019/04/19/results-show/face_login-success1.png" title="返回登录人员"><br>&emsp;&emsp;注册页面：<br>      <img src="/face_recognition_login/2019/04/19/results-show/register.png" title="注册"></p>
+        <h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>&emsp;&emsp;登录界面：<br>      <img src="/face_recognition_login/2019/04/19/results-show/login.png" title="登录"><br>&emsp;&emsp;人脸图片识别登录：<br>      <br>&emsp;&emsp;人脸识别登录成功：<br>      <img src="/face_recognition_login/2019/04/19/results-show/face_login-success0.png" title="登录成功"><br>      <img src="/face_recognition_login/2019/04/19/results-show/face_login-success1.png" title="返回登录人员"><br>&emsp;&emsp;注册页面：<br>      <img src="/face_recognition_login/2019/04/19/results-show/register.png" title="注册"></p>
 <p></p><p id="blink">&emsp;&emsp;随机动作指令之眨眼两次检测：</p><br>      <img src="/face_recognition_login/2019/04/19/results-show/blink.png" title="开始眨眼检测"><br>      <img src="/face_recognition_login/2019/04/19/results-show/blink_twice.png" title="执行了两次眨眼"><p></p>
 <h2 id="人脸图片识别登录"><a href="#人脸图片识别登录" class="headerlink" title="人脸图片识别登录"></a>人脸图片识别登录</h2><p><pre id="face_photo"><br>    虽然可以成功登录了，但是性能却不好；<br>    首先是人脸图片识别登录，我们看下后台运行的时间跟踪：<br></pre><br>        <img src="/face_recognition_login/2019/04/19/results-show/img_write.png" title="后台读取用户传入图片所用时间"><br>        </p>
 <p>&emsp;&emsp;现在人少些，图片登录花费时间还能接受，采用的dlib中的HOG+SVM方法的模型，使用的CPU进行计算，若人再多些，就得想其他技术手段进行解决了；还有，dlib实现的这种方法可以弱化一定的光照影响，但并非可以完全避免，因为它是依赖于像素强度的边缘检测（在进行眨眼检测的过程中，我发现它有时会把人眼关键点检测错误，导致闭眼的状态检测成了眨眼）；当然，这种检测方法若不进行其他处理并不安全，一张手机照片也能登录。</p>
 <h2 id="随机动作指令之眨眼检测"><a href="#随机动作指令之眨眼检测" class="headerlink" title="随机动作指令之眨眼检测"></a>随机动作指令之眨眼检测</h2><p>&emsp;&emsp;我进行的第二项实现，是基于人脸关键点的面部动作检测，结合随机指令应用到人脸识别登录系统上<br>效果图在<a href="#blink">这里</a>,它的问题在于执行时间和误检率较高：</p>
-  <img src="/face_recognition_login/2019/04/19/results-show/blink_time.png" title="后台进行眨眼检测所用时间">
-<p>&emsp;&emsp;时间高是因为，我将从用户获取的眨眼视频通过ffmpeg及opencv的处理分解成了大概50帧，这50帧中每一帧都进行了人脸眼部状态的检测，检测过程采取了<a href="#face_photo">人脸识别登录</a>的方法,整个流程非常耗时；dlib中原有的基于HOG+SVM的方法对于人脸特征点检测存在一定的误差，所以由此得到的人脸状态存在一定的误差，若是换成其他方案，或许会有更好的效果（dlib中有CNN的人脸检测方法，无奈本人即无GPU也无财）</p>
+  <img src="/face_recognition_login/2019/04/19/results-show/blink_video_stream.png" title="后台进行眨眼检测所用时间">
+<p>&emsp;&emsp;时间高是因为，我将从用户获取的眨眼视频通过ffmpeg及opencv的处理分解成了大概50帧，这50帧中每一帧都进行了人脸眼部状态的检测，检测过程采取了<a href="#face_photo">人脸识别登录</a>的方法,整个流程非常耗时；dlib中原有的基于HOG+SVM的方法对于人脸特征点检测存在一定的误差，所以由此得到的人脸状态存在一定的误差，若是换成其他方案，或许会有更好的效果（暂时还没细致测试）</p>
 
       
     </div>
