@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/face_recognition_login/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/face_recognition_login/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/face_recognition_login/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/face_recognition_login/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/face_recognition_login/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/face_recognition_login/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/face_recognition_login/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="流程     本节总结下初步完成人脸动作检测登录的流程：         用户进入登录界面       -&amp;gt;点击面部动作检测登录       -&amp;gt;用户点击start开启摄像头       -&amp;gt;待人脸进入摄像头范围，点击Start Recording开始录像       -&amp;gt;在2s录像中完成动作（初步是完成眨眼两次检测），前端自动上传该2s视频       -&amp;gt;后台根据前端传来的数据，进行解析，获得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="face_video_recognition">
+<meta property="og:url" content="http://xinhuikang.github.io/2019/04/24/face-video-recognition/index.html">
+<meta property="og:site_name" content="face_reco_login">
+<meta property="og:description" content="流程     本节总结下初步完成人脸动作检测登录的流程：         用户进入登录界面       -&amp;gt;点击面部动作检测登录       -&amp;gt;用户点击start开启摄像头       -&amp;gt;待人脸进入摄像头范围，点击Start Recording开始录像       -&amp;gt;在2s录像中完成动作（初步是完成眨眼两次检测），前端自动上传该2s视频       -&amp;gt;后台根据前端传来的数据，进行解析，获得">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/24/face-video-recognition/68landmark.png">
+<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/24/face-video-recognition/article-ear.png">
+<meta property="og:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/24/face-video-recognition/EAR.png">
+<meta property="og:updated_time" content="2019-04-24T10:09:30.624Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="face_video_recognition">
+<meta name="twitter:description" content="流程     本节总结下初步完成人脸动作检测登录的流程：         用户进入登录界面       -&amp;gt;点击面部动作检测登录       -&amp;gt;用户点击start开启摄像头       -&amp;gt;待人脸进入摄像头范围，点击Start Recording开始录像       -&amp;gt;在2s录像中完成动作（初步是完成眨眼两次检测），前端自动上传该2s视频       -&amp;gt;后台根据前端传来的数据，进行解析，获得">
+<meta name="twitter:image" content="http://xinhuikang.github.io/face_recognition_login/2019/04/24/face-video-recognition/68landmark.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/face_recognition_login/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xinhuikang.github.io/2019/04/24/face-video-recognition/">
+
+
+
+
+
+  <title>face_video_recognition | face_reco_login</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/face_recognition_login/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">face_reco_login</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">face_login_subTitle</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/face_recognition_login/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/face_recognition_login/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xinhuikang.github.io/face_recognition_login/2019/04/24/face-video-recognition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xinhuikang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/face_recognition_login/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="face_reco_login">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">face_video_recognition</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T09:25:51+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/face_recognition_login/2019/04/24/face-video-recognition/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/face_recognition_login/2019/04/24/face-video-recognition/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><pre>
+    本节总结下初步完成人脸动作检测登录的流程：
+        用户进入登录界面
+      ->点击面部动作检测登录
+      ->用户点击<b>start</b>开启摄像头
+      ->待人脸进入摄像头范围，点击<b>Start Recording</b>开始录像
+      ->在2s录像中完成动作（初步是完成眨眼两次检测），前端自动上传该2s视频
+      ->后台根据前端传来的数据，进行解析，获得结果后传回前端
+      ->前端接收返回结果，成功，则跳转进入系统；失败则要求用户重新登录
+    注：旁边的<b>play</b>按钮方便用户查看上传到服务端的2s视频
+</pre>
+
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="前端解读"><a href="#前端解读" class="headerlink" title="前端解读"></a>前端解读</h3><p>&emsp;&emsp;在用户<i id="template">模板</i>页面添加显示标签和点击按钮<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;video id=&quot;gum&quot; playsinline autoplay muted&gt;&lt;/video&gt;</span><br><span class="line">&lt;video id=&quot;recorded&quot; playsinline loop&gt;&lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;button id=&quot;start&quot;&gt;Start camera&lt;/button&gt;</span><br><span class="line">    &lt;button id=&quot;record&quot; disabled&gt;Start Recording&lt;/button&gt;</span><br><span class="line">    &lt;button id=&quot;play&quot; disabled&gt;Play&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;接下来是前端的js代码，我们基于的是<a href="https://webrtc.github.io/samples/src/content/getusermedia/record/" target="_self">webrtc官网的参考代码</a><br>  <div><div class="fold_hider"><div class="close hider_title">点击显/隐完整js代码</div></div><div class="fold">
+<figure class="highlight plain"><figcaption><span>录制视频自动上传</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">/<em> globals MediaRecorder </em>/</span><br><span class="line">//const mediaSource = new MediaSource();</span><br><span class="line">//mediaSource.addEventListener(&apos;sourceopen&apos;, handleSourceOpen, false);</span><br><span class="line">let mediaRecorder;</span><br><span class="line">let recordedBlobs;</span><br><span class="line">let sourceBuffer;</span><br><span class="line"></span><br><span class="line">const errorMsgElement = document.querySelector(&apos;span#errorMsg&apos;);</span><br><span class="line">const recordedVideo = document.querySelector(&apos;video#recorded&apos;);</span><br><span class="line">const recordButton = document.querySelector(&apos;button#record&apos;);</span><br><span class="line">recordButton.addEventListener(&apos;click&apos;, () =&gt; &#123;</span><br><span class="line">  if (recordButton.textContent === &apos;Start Recording&apos;) &#123;</span><br><span class="line">    startRecording();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    stopRecording();</span><br><span class="line">    recordButton.textContent = &apos;Start Recording&apos;;</span><br><span class="line">    playButton.disabled = false;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const playButton = document.querySelector(&apos;button#play&apos;);</span><br><span class="line">playButton.addEventListener(&apos;click&apos;, () =&gt; &#123;</span><br><span class="line">  const superBuffer = new Blob(recordedBlobs, &#123;type: &apos;video/webm&apos;&#125;);</span><br><span class="line">  recordedVideo.src = null;</span><br><span class="line">  recordedVideo.srcObject = null;</span><br><span class="line">  recordedVideo.src = window.URL.createObjectURL(superBuffer);</span><br><span class="line">  recordedVideo.controls = true;</span><br><span class="line">  recordedVideo.play();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function handleDataAvailable(event) &#123;</span><br><span class="line">  if (event.data &amp;&amp; event.data.size &gt; 0 &amp;&amp; mediaRecorder.state != &apos;inactive&apos;) &#123;</span><br><span class="line">    console.log(&apos;event.data&apos;, event.data);</span><br><span class="line">    console.log(&apos;———————————————————–&apos;);</span><br><span class="line">    recordedBlobs.push(event.data);</span><br><span class="line">    recordButton.click();</span><br><span class="line">    var formData = new FormData();</span><br><span class="line">    //formData.append(&apos;video-filename&apos;, file.name);</span><br><span class="line">    formData.append(&quot;faceVideo&quot;, event.data);</span><br><span class="line">    //console.log(&apos;file:&apos;, file);</span><br><span class="line">    jQuery.ajax(&#123;</span><br><span class="line">        type:&quot;POST&quot;,</span><br><span class="line">        url:&quot;/face/test/&quot;,</span><br><span class="line">        //必须添加 csrf_token</span><br><span class="line">        contentType:&quot;video/webm&quot;,</span><br><span class="line">        data:formData,</span><br><span class="line">        dataType: &quot;json&quot;,</span><br><span class="line">        cache: false,//上传文件无需缓存</span><br><span class="line">        processData: false, // 告诉jQuery不要去处理发送的数据</span><br><span class="line">        contentType: false, // 告诉jQuery不要去设置Content-Type请求头</span><br><span class="line"></span><br><span class="line">        success:function (displayList) &#123;</span><br><span class="line">            &lt;!–// 处理认证后的数据–&gt;</span><br><span class="line">            if (displayList.canLogin === true)&#123;</span><br><span class="line">                alert(&quot;验证成功！&quot;);</span><br><span class="line">                alert(&apos;Blinks:&apos; + displayList.blink_num);</span><br><span class="line">                alert(displayList.AuthName);</span><br><span class="line">                window.location.href=&apos;/accounts/profile/&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                alert(&quot;验证失败！&quot;);</span><br><span class="line">                alert(displayList.blink_num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function () &#123;</span><br><span class="line">          alert(&quot;验证失败: 未检测到人脸！&quot;);</span><br><span class="line">           &lt;!–DisplayNo1.text(&quot;验证失败: 未检测到人脸&quot;).removeClass(&quot;label-success&quot;).addClass(&quot;label-danger&quot;);–&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function startRecording() &#123;</span><br><span class="line">  recordedBlobs = [];</span><br><span class="line">  let options = &#123;mimeType: &apos;video/webm;codecs=vp9&apos;&#125;;</span><br><span class="line">  if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">    console.error(<code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>);</span><br><span class="line">    errorMsgElement.innerHTML = <code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>;</span><br><span class="line">    options = &#123;mimeType: &apos;video/webm;codecs=vp8&apos;&#125;;</span><br><span class="line">    if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">      console.error(<code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>);</span><br><span class="line">      errorMsgElement.innerHTML = <code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>;</span><br><span class="line">      options = &#123;mimeType: &apos;video/webm&apos;&#125;;</span><br><span class="line">      if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">        console.error(<code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>);</span><br><span class="line">        errorMsgElement.innerHTML = <code>$&amp;#123;options.mimeType&amp;#125; is not Supported</code>;</span><br><span class="line">        options = &#123;mimeType: &apos;&apos;&#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  try &#123;</span><br><span class="line">    mediaRecorder = new MediaRecorder(window.stream, options);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.error(&apos;Exception while creating MediaRecorder:&apos;, e);</span><br><span class="line">    errorMsgElement.innerHTML = <code>Exception while creating MediaRecorder: $&amp;#123;JSON.stringify(e)&amp;#125;</code>;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  console.log(&apos;Created MediaRecorder&apos;, mediaRecorder, &apos;with options&apos;, options);</span><br><span class="line">  recordButton.textContent = &apos;Uploading…&apos;;</span><br><span class="line">  playButton.disabled = true;</span><br><span class="line">  mediaRecorder.onstop = (event) =&gt; &#123;</span><br><span class="line">    console.log(&apos;Recorder stopped: &apos;, event);</span><br><span class="line">  &#125;;</span><br><span class="line">  mediaRecorder.ondataavailable = handleDataAvailable;</span><br><span class="line">  mediaRecorder.start(2000); // collect 10ms of data</span><br><span class="line">  console.log(&apos;MediaRecorder started&apos;, mediaRecorder);</span><br><span class="line">  //recordButton.click();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function stopRecording() &#123;</span><br><span class="line">  mediaRecorder.stop();</span><br><span class="line">  console.log(&apos;Recorded Blobs: &apos;, recordedBlobs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function handleSuccess(stream) &#123;</span><br><span class="line">  recordButton.disabled = false;</span><br><span class="line">  console.log(&apos;getUserMedia() got stream:&apos;, stream);</span><br><span class="line">  window.stream = stream;</span><br><span class="line"></span><br><span class="line">  const gumVideo = document.querySelector(&apos;video#gum&apos;);</span><br><span class="line">  gumVideo.srcObject = stream;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function init(constraints) &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const stream = await navigator.mediaDevices.getUserMedia(constraints);</span><br><span class="line">    handleSuccess(stream);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.error(&apos;navigator.getUserMedia error:&apos;, e);</span><br><span class="line">    errorMsgElement.innerHTML = <code>navigator.getUserMedia error:$&amp;#123;e.toString()&amp;#125;</code>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">document.querySelector(&apos;button#start&apos;).addEventListener(&apos;click&apos;, async () =&gt; &#123;</span><br><span class="line">  const hasEchoCancellation = document.querySelector(&apos;#echoCancellation&apos;).checked;</span><br><span class="line">  const constraints = &#123;</span><br><span class="line">    audio: &#123;</span><br><span class="line">      echoCancellation: &#123;exact: hasEchoCancellation&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    video: &#123;</span><br><span class="line">      width: 1280, height: 720</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  console.log(&apos;Using media constraints:&apos;, constraints);</span><br><span class="line">  await init(constraints);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</div></div><br>&emsp;&emsp;在这里，主要是几个函数，涉及的中心是对<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaRecorder" target="_self">MediaRecorder</a>接口的应用，我会一一进行讲解<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let mediaRecorder;</span><br><span class="line">let recordedBlobs;</span><br><span class="line">let sourceBuffer;</span><br><span class="line"></span><br><span class="line">const errorMsgElement = document.querySelector(&apos;span#errorMsg&apos;);</span><br><span class="line">const recordedVideo = document.querySelector(&apos;video#recorded&apos;);</span><br><span class="line">const recordButton = document.querySelector(&apos;button#record&apos;);</span><br><span class="line">recordButton.addEventListener(&apos;click&apos;, () =&gt; &#123;</span><br><span class="line">  if (recordButton.textContent === &apos;Start Recording&apos;) &#123;</span><br><span class="line">    startRecording();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    stopRecording();</span><br><span class="line">    recordButton.textContent = &apos;Start Recording&apos;;</span><br><span class="line">    playButton.disabled = false;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;这里是获取页面元素及对<b>record</b>按钮的点击事件进行处理，对每一次<b>record</b>点击，显示在“Start Recording”和“loading”间切换，在<b>Start Record</b>前,将<b>play</b>按钮设置为点击无效<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const playButton = document.querySelector(&apos;button#play&apos;);</span><br><span class="line">playButton.addEventListener(&apos;click&apos;, () =&gt; &#123;</span><br><span class="line">  const superBuffer = new Blob(recordedBlobs, &#123;type: &apos;video/webm&apos;&#125;);</span><br><span class="line">  recordedVideo.src = null;</span><br><span class="line">  recordedVideo.srcObject = null;</span><br><span class="line">  recordedVideo.src = window.URL.createObjectURL(superBuffer);</span><br><span class="line">  recordedVideo.controls = true;</span><br><span class="line">  recordedVideo.play();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;这里是对播放按钮的点击事件进行处理，这里是将获取到的<b>recordedBlobs</b>流处理对象赋值给新的Blob流处理对象，并作为视频源url赋值给<b>recordedVideo</b>元素，这样<b>recordedVideo</b>元素就能播放刚刚录制的视频了（关于Blob的更多描述，可以参看其<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_self">官网</a>)<br>&emsp;&emsp;接下来四个函数是对点击按钮<b>record</b>后视频录制的处理<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">function handleDataAvailable(event) &#123;</span><br><span class="line">  if (event.data &amp;&amp; event.data.size &gt; 0 &amp;&amp; mediaRecorder.state != &apos;inactive&apos;) &#123;</span><br><span class="line">    console.log(&apos;event.data&apos;, event.data);</span><br><span class="line">    console.log(&apos;-----------------------------------------------------------&apos;);</span><br><span class="line">    recordedBlobs.push(event.data);</span><br><span class="line">    recordButton.click();</span><br><span class="line">    var formData = new FormData();</span><br><span class="line">    //formData.append(&apos;video-filename&apos;, file.name);</span><br><span class="line">    formData.append(&quot;faceVideo&quot;, event.data);</span><br><span class="line">    //console.log(&apos;file:&apos;, file);</span><br><span class="line">    jQuery.ajax(&#123;</span><br><span class="line">        type:&quot;POST&quot;,</span><br><span class="line">        url:&quot;/face/test/&quot;,</span><br><span class="line">        //必须添加 csrf_token</span><br><span class="line">        contentType:&quot;video/webm&quot;,</span><br><span class="line">        data:formData,</span><br><span class="line">        dataType: &quot;json&quot;,</span><br><span class="line">        cache: false,//上传文件无需缓存</span><br><span class="line">        processData: false, // 告诉jQuery不要去处理发送的数据</span><br><span class="line">        contentType: false, // 告诉jQuery不要去设置Content-Type请求头</span><br><span class="line"></span><br><span class="line">        success:function (displayList) &#123;</span><br><span class="line">            &lt;!--// 处理认证后的数据--&gt;</span><br><span class="line">            if (displayList.canLogin === true)&#123;</span><br><span class="line">                alert(&quot;验证成功！&quot;);</span><br><span class="line">                alert(&apos;Blinks:&apos; + displayList.blink_num);</span><br><span class="line">                alert(displayList.AuthName);</span><br><span class="line">                window.location.href=&apos;/accounts/profile/&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                alert(&quot;验证失败！&quot;);</span><br><span class="line">                alert(displayList.blink_num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function () &#123;</span><br><span class="line">          alert(&quot;验证失败: 未检测到人脸！&quot;);</span><br><span class="line">           &lt;!--DisplayNo1.text(&quot;验证失败: 未检测到人脸&quot;).removeClass(&quot;label-success&quot;).addClass(&quot;label-danger&quot;);--&gt;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;该函数是对<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaRecorder/ondataavailable" target="_blank" rel="noopener">mediaRecorder.ondataavailable</a>事件的处理，主要触发情况有两个，一个是我们设定的录制时间到了，一个是我们触发了 MediaRecorder.stop()事件，此时，会传进一个event对象，里面的data就是我们录制的视频数据，我们可以通过formData.append（）封装数据，用ajax传至后台，在后台通过request.File[]可以获取到该视频录制数据<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">function startRecording() &#123;</span><br><span class="line">  recordedBlobs = [];</span><br><span class="line">  let options = &#123;mimeType: &apos;video/webm;codecs=vp9&apos;&#125;;</span><br><span class="line">  if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">    console.error(`$&#123;options.mimeType&#125; is not Supported`);</span><br><span class="line">    errorMsgElement.innerHTML = `$&#123;options.mimeType&#125; is not Supported`;</span><br><span class="line">    options = &#123;mimeType: &apos;video/webm;codecs=vp8&apos;&#125;;</span><br><span class="line">    if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">      console.error(`$&#123;options.mimeType&#125; is not Supported`);</span><br><span class="line">      errorMsgElement.innerHTML = `$&#123;options.mimeType&#125; is not Supported`;</span><br><span class="line">      options = &#123;mimeType: &apos;video/webm&apos;&#125;;</span><br><span class="line">      if (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">        console.error(`$&#123;options.mimeType&#125; is not Supported`);</span><br><span class="line">        errorMsgElement.innerHTML = `$&#123;options.mimeType&#125; is not Supported`;</span><br><span class="line">        options = &#123;mimeType: &apos;&apos;&#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  try &#123;</span><br><span class="line">    mediaRecorder = new MediaRecorder(window.stream, options);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.error(&apos;Exception while creating MediaRecorder:&apos;, e);</span><br><span class="line">    errorMsgElement.innerHTML = `Exception while creating MediaRecorder: $&#123;JSON.stringify(e)&#125;`;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  console.log(&apos;Created MediaRecorder&apos;, mediaRecorder, &apos;with options&apos;, options);</span><br><span class="line">  recordButton.textContent = &apos;Uploading...&apos;;</span><br><span class="line">  playButton.disabled = true;</span><br><span class="line">  mediaRecorder.onstop = (event) =&gt; &#123;</span><br><span class="line">    console.log(&apos;Recorder stopped: &apos;, event);</span><br><span class="line">  &#125;;</span><br><span class="line">  mediaRecorder.ondataavailable = handleDataAvailable;</span><br><span class="line">  mediaRecorder.start(2000); // collect 10ms of data</span><br><span class="line">  console.log(&apos;MediaRecorder started&apos;, mediaRecorder);</span><br><span class="line">  //recordButton.click();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;这里是我们开始视频录制的函数，首先，我们通过<b>MediaRecorder.isTypeSupported</b>可以查询到我们的浏览器是否支持webrtc所需的编解码（编解码是由浏览器提供的），webrtc默认的video是webm格式，获取到编码类型后我们新建<b>MediaRecorder</b>对象，传入的参数<i>window.stream</i>是我们一会儿通过<b>navigator.mediaDevices.getUserMedia</b>获取到的，也就是我们主机媒体设备的媒体流，将<i>play</i>按钮设置为点击有效，改变<i>reord</i>按钮的显示文本，设置<b>mediaRecorder.onstop</b>事件的处理程序，设置<b>mediaRecorder.ondataavailable</b>的处理程序，<b>mediaRecorder.start(2000)</b>设置我们的录制时间为2s<br>&emsp;&emsp;注：这里所有的<b>console.log</b>是为了方便我们在浏览器的console界面进行运行变量观察<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function stopRecording() &#123;</span><br><span class="line">  mediaRecorder.stop();</span><br><span class="line">  console.log(&apos;Recorded Blobs: &apos;, recordedBlobs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;这个函数是当<i>record</i>按钮在“Loading”状态点击时调用的函数，它会调用<b>mediaRecorder.stop()</b>函数，并触发<b>mediaRecorder.ondataavailable</b>事件<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function handleSuccess(stream) &#123;</span><br><span class="line">  recordButton.disabled = false;</span><br><span class="line">  console.log(&apos;getUserMedia() got stream:&apos;, stream);</span><br><span class="line">  window.stream = stream;</span><br><span class="line"></span><br><span class="line">  const gumVideo = document.querySelector(&apos;video#gum&apos;);</span><br><span class="line">  gumVideo.srcObject = stream;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;成功获得用户许可拿到媒体流后的处理函数，开启<i>record</i>按钮点击有效，将获得的媒体流stream赋值给<i>window.stream</i>方便后面将流数据记录，同时对<i>gum</i>元素赋值，用来将媒体流实时显示<br>&emsp;&emsp;接下来的两个函数，是对用户点击<b>Start</b>按钮后获取webcam媒体流的初始化处理；<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">async function init(constraints) &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const stream = await navigator.mediaDevices.getUserMedia(constraints);</span><br><span class="line">    handleSuccess(stream);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.error(&apos;navigator.getUserMedia error:&apos;, e);</span><br><span class="line">    errorMsgElement.innerHTML = `navigator.getUserMedia error:$&#123;e.toString()&#125;`;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;该初始化函数询问用户来获取媒体流权限，前面声明<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function" target="_self">async</a>来说明这是一个异步函数，函数中的<i>await</i>会使函数暂停执行，等待<i>Promise</i>的结果出来，若成功获取媒体流权限，则将媒体流传入<b>handleSuccess</b>函数，进行下一步处理；反之，对<i>errorMsgElement</i>元素赋值来显示错误信息<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;button#start&apos;).addEventListener(&apos;click&apos;, async () =&gt; &#123;</span><br><span class="line">  const hasEchoCancellation = document.querySelector(&apos;#echoCancellation&apos;).checked;</span><br><span class="line">  const constraints = &#123;</span><br><span class="line">    audio: &#123;</span><br><span class="line">      echoCancellation: &#123;exact: hasEchoCancellation&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    video: &#123;</span><br><span class="line">      width: 1280, height: 720</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  console.log(&apos;Using media constraints:&apos;, constraints);</span><br><span class="line">  await init(constraints);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;当用户点击<i>Start</i>按钮后，触发该<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function" target="_self">async</a>调用，在这里设置对媒体流的约束变量<i>constraints</i>，然后传入并调用<b>init</b>函数，等待用户赋予媒体流权限</p>
+<h3 id="后台解读"><a href="#后台解读" class="headerlink" title="后台解读"></a>后台解读</h3>  <div><div class="fold_hider"><div class="close hider_title">views.py中处理此功能的代码</div></div><div class="fold">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">@csrf_exempt</span><br><span class="line">def test(request):</span><br><span class="line">    if request.method == &quot;POST&quot;:</span><br><span class="line">        start = time.clock()</span><br><span class="line">        videos = request.FILES[&apos;faceVideo&apos;]</span><br><span class="line">        fileName = &apos;temp.webm&apos;</span><br><span class="line">        # file = uploadedfile.File(videos)</span><br><span class="line">        with open(fileName, &apos;wb&apos;) as f:</span><br><span class="line">            for chunk in videos.chunks():</span><br><span class="line">                f.write(chunk)</span><br><span class="line">        end = time.clock()</span><br><span class="line">        print(&quot;video_get_write:&quot;, end - start)</span><br><span class="line"></span><br><span class="line">        start = time.clock()</span><br><span class="line">        num = detection_blink()</span><br><span class="line">        end = time.clock()</span><br><span class="line">        print(&quot;Blink_video_stream:&quot;, end - start)</span><br><span class="line"></span><br><span class="line">        files = glob.glob(os.path.join(&apos;.&apos;, &quot;<em>.jpg&quot;))</em></span><br><span class="line">        imgName = files[int(len(files) / 2)]</span><br><span class="line">        jsonInfo = auth_user(imgName)</span><br><span class="line">        os.system(&apos;del .mp4 <em>.webm </em>.npy&apos;)</span><br><span class="line">        JsonBackInfo = &#123;</span><br><span class="line">            &quot;canLogin&quot;: jsonInfo[&apos;canLogin&apos;],</span><br><span class="line">            &quot;AuthName&quot;: jsonInfo[&apos;AuthName&apos;],</span><br><span class="line">            &apos;blink_num&apos;: num</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if jsonInfo[&apos;AuthName&apos;] != &quot;未授权用户&quot; and num == 2:</span><br><span class="line">            user = User.objects.get_by_natural_key(username=jsonInfo[&apos;AuthName&apos;])  # authenticate(username=&apos;admin&apos;, password=&apos;123456&apos;)</span><br><span class="line">            if user is not None:</span><br><span class="line">                if user.is_active:</span><br><span class="line">                    ori_login(request, user)</span><br><span class="line"></span><br><span class="line">        return JsonResponse(JsonBackInfo)</span><br><span class="line">    else:</span><br><span class="line">        return render(request, &apos;test.html&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def eye_aspect_ratio(eye):</span><br><span class="line">    point0 = eye[0]</span><br><span class="line">    point1 = eye[1]</span><br><span class="line">    point2 = eye[2]</span><br><span class="line">    point3 = eye[3]</span><br><span class="line">    point4 = eye[4]</span><br><span class="line">    point5 = eye[5]</span><br><span class="line">    temp = math.pow(point1[0] - point5[0], 2), math.pow(point1[1] - point5[1], 2)</span><br><span class="line">    distance1 = math.sqrt(math.fsum(temp))</span><br><span class="line">    temp = math.pow(point2[0] - point4[0], 2), math.pow(point2[1] - point4[1], 2)</span><br><span class="line">    distance2 = math.sqrt(math.fsum(temp))</span><br><span class="line">    temp = math.pow(point0[0] - point3[0], 2), math.pow(point0[1] - point3[1], 2)</span><br><span class="line">    distance3 = math.sqrt(math.fsum(temp))</span><br><span class="line">    return (distance1 + distance2) / (2 <em> distance3)</em></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def video2frame(videofile):</span><br><span class="line">    # 读取视频</span><br><span class="line">    cap = cv2.VideoCapture(videofile)</span><br><span class="line">    # 获取FPS(每秒传输帧数(Frames Per Second))</span><br><span class="line">    fps = cap.get(cv2.CAP_PROP_FPS)</span><br><span class="line">    # 获取总帧数</span><br><span class="line">    totalFrameNumber = cap.get(cv2.CAP_PROP_FRAME_COUNT)</span><br><span class="line">    print(fps)</span><br><span class="line">    print(totalFrameNumber)</span><br><span class="line">    # 当前读取到第几帧</span><br><span class="line">    COUNT = 0</span><br><span class="line"></span><br><span class="line">    # 若小于总帧数则读一帧图像</span><br><span class="line">    while COUNT &lt; totalFrameNumber:</span><br><span class="line">        # 一帧一帧图像读取</span><br><span class="line">        ret, frame = cap.read()</span><br><span class="line">        # 把每一帧图像保存成jpg格式（这一行可以根据需要选择保留）</span><br><span class="line">        cv2.imwrite(str(COUNT).zfill(3) + &apos;.jpg&apos;, frame)</span><br><span class="line">        # 显示这一帧地图像</span><br><span class="line">        # cv2.imshow(&apos;video&apos;, frame)</span><br><span class="line">        COUNT = COUNT + 1</span><br><span class="line">        # 延时一段33ms（1s➗30帧）再读取下一帧，如果没有这一句便无法正常显示视频</span><br><span class="line">        cv2.waitKey(33)</span><br><span class="line"></span><br><span class="line">    cap.release();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def translate(infile, outfile):</span><br><span class="line">    ff = ffmpy3.FFmpeg(</span><br><span class="line">        inputs=&#123;infile: None&#125;,</span><br><span class="line">        outputs=&#123;outfile: &apos;-r 25 -y&apos;&#125;</span><br><span class="line">    )</span><br><span class="line">    ff.run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def detection_blink():</span><br><span class="line">    num = 0</span><br><span class="line">    left_blink, right_blink = (False, False)</span><br><span class="line">    infile = &apos;temp.webm&apos;</span><br><span class="line">    outfile = &apos;temp.mp4&apos;</span><br><span class="line">    translate(infile, outfile)</span><br><span class="line">    video2frame(outfile)</span><br><span class="line"></span><br><span class="line">    files = glob.glob(os.path.join(&apos;.&apos;, &quot;.jpg&quot;))</span><br><span class="line">    for f in files:</span><br><span class="line">        unknown_face = face_recognition.load_image_file(f)</span><br><span class="line">        locate_unknown_face = face_recognition.face_locations(unknown_face)</span><br><span class="line">        landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)</span><br><span class="line">        left_eye = landmards[0][&apos;left_eye&apos;]</span><br><span class="line">        right_eye = landmards[0][&apos;right_eye&apos;]</span><br><span class="line">        left_ear = eye_aspect_ratio(left_eye)</span><br><span class="line">        right_ear = eye_aspect_ratio(right_eye)</span><br><span class="line"></span><br><span class="line">        if left_ear &lt; 0.20:</span><br><span class="line">            left_blink = True</span><br><span class="line">        if right_ear &lt; 0.20:</span><br><span class="line">            right_blink = True</span><br><span class="line"></span><br><span class="line">        if left_ear &gt;= 0.20 and right_ear &gt;= 0.20 and left_blink and right_blink:</span><br><span class="line">            num += 1</span><br><span class="line">            right_blink = False</span><br><span class="line">            left_blink = False</span><br><span class="line"></span><br><span class="line">    return num</span><br></pre></td></tr></table></figure>
+</div></div>
+<p>&emsp;&emsp;这里涉及ffmpy3、cv2、face_recognition等对媒体文件进行处理的包，其中ffmpy3是基于ffmpeg工具，我们需要预先对其安装，可去&lt;a href=”<a href="http://www.ffmpeg.org/download.html&quot;" target="_blank" rel="noopener">http://www.ffmpeg.org/download.html&quot;</a> target=”_self”官网下载<br>&emsp;&emsp;我们在这里将该部分功能拆分为5个函数，对眨眼检测的总体处理流程是：首先从前端获取用户视频，用ffmpeg将视频解析为每秒25帧的图片集，对每帧图片检测其中人脸的68个标记点<br>  <img src="/face_recognition_login/2019/04/24/face-video-recognition/68landmark.png" title="人脸68个标记点"><br>&emsp;&emsp;根据<a href="http://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf?spm=5176.100239.blogcont336184.8.b7697a07zKT7r&file=05.pdf" target="_self">参考论文</a>中的描述眼睛纵横比（eye aspect ratio (EAR)）的概念，可以取出68个标记点的左右眼部分，计算眼睛纵横比，设定一个阈值，将ear值与阈值对比，大于阈值判断眼睛为睁开状态，反之则判断为闭眼状态，最后顺序处理每张图片的眼睛状态来获得总共的眨眼次数<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">@csrf_exempt</span><br><span class="line">def test(request):</span><br><span class="line">    if request.method == &quot;POST&quot;:</span><br><span class="line">        start = time.clock()</span><br><span class="line">        videos = request.FILES[&apos;faceVideo&apos;]</span><br><span class="line">        fileName = &apos;temp.webm&apos;</span><br><span class="line">        # file = uploadedfile.File(videos)</span><br><span class="line">        with open(fileName, &apos;wb&apos;) as f:</span><br><span class="line">            for chunk in videos.chunks():</span><br><span class="line">                f.write(chunk)</span><br><span class="line">        end = time.clock()</span><br><span class="line">        print(&quot;video_get_write:&quot;, end - start)</span><br><span class="line"></span><br><span class="line">        start = time.clock()</span><br><span class="line">        num = detection_blink()</span><br><span class="line">        end = time.clock()</span><br><span class="line">        print(&quot;Blink_video_stream:&quot;, end - start)</span><br><span class="line"></span><br><span class="line">        files = glob.glob(os.path.join(&apos;.&apos;, &quot;*.jpg&quot;))</span><br><span class="line">        imgName = files[int(len(files) / 2)]</span><br><span class="line">        jsonInfo = auth_user(imgName)</span><br><span class="line">        os.system(&apos;del *.mp4 *.webm *.npy&apos;)</span><br><span class="line">        JsonBackInfo = &#123;</span><br><span class="line">            &quot;canLogin&quot;: jsonInfo[&apos;canLogin&apos;],</span><br><span class="line">            &quot;AuthName&quot;: jsonInfo[&apos;AuthName&apos;],</span><br><span class="line">            &apos;blink_num&apos;: num</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if jsonInfo[&apos;AuthName&apos;] != &quot;未授权用户&quot; and num == 2:</span><br><span class="line">            user = User.objects.get_by_natural_key(username=jsonInfo[&apos;AuthName&apos;])  # authenticate(username=&apos;admin&apos;, password=&apos;123456&apos;)</span><br><span class="line">            if user is not None:</span><br><span class="line">                if user.is_active:</span><br><span class="line">                    ori_login(request, user)</span><br><span class="line"></span><br><span class="line">        return JsonResponse(JsonBackInfo)</span><br><span class="line">    else:</span><br><span class="line">        return render(request, &apos;test.html&apos;)</span><br></pre></td></tr></table></figure><br>  &emsp;&emsp;该函数前面的<a href="http://www.runoob.com/w3cnote/python-func-decorators.html" target="_self">装饰器</a><a href="https://docs.djangoproject.com/en/2.2/ref/csrf/#django.views.decorators.csrf.csrf_exempt" target="_self">csrf_exempt</a>是用来说明访问下面的函数前可以不用<i>csrf_token</i>验证，这是处理眨眼检测请求的主函数，请求为“get”时，渲染眨眼检测模板页面并作为结果返回用户；当请求为“post”时，通过<i>request.FILES[‘faceVideo’]</i>来获取传至后台的媒体文件，为避免因文件<br>过大而无法写入的问题，这里调用<a href="https://blog.csdn.net/u013451157/article/details/78917768" target="_self">UploadFile.chunks()</a>方法读取并用<b>write()</b>将上传文件存入后台文件系统，接下来调用<b>detection_blink()</b>进行眨眼检测，返回眨眼次数存入num，获取视频中间的一帧调用<b>auth_user(imgName)</b>来进行登录用户匹配，构造Json用来返回用户数据<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def translate(infile, outfile):</span><br><span class="line">    ff = ffmpy3.FFmpeg(</span><br><span class="line">        inputs=&#123;infile: None&#125;,</span><br><span class="line">        outputs=&#123;outfile: &apos;-r 25 -y&apos;&#125;</span><br><span class="line">    )</span><br><span class="line">    ff.run()</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;该函数用ffmpy3将<i>infile</i>以每秒25帧的帧率转换成<i>outfile</i>，目的是将webrtc的webm视频格式转换为mp4格式，以便opencv提取每一帧的数据（opencv无法解析webm格式）<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def video2frame(videofile):</span><br><span class="line">    # 读取视频</span><br><span class="line">    cap = cv2.VideoCapture(videofile)</span><br><span class="line">    # 获取FPS(每秒传输帧数(Frames Per Second))</span><br><span class="line">    fps = cap.get(cv2.CAP_PROP_FPS)</span><br><span class="line">    # 获取总帧数</span><br><span class="line">    totalFrameNumber = cap.get(cv2.CAP_PROP_FRAME_COUNT)</span><br><span class="line">    print(fps)</span><br><span class="line">    print(totalFrameNumber)</span><br><span class="line">    # 当前读取到第几帧</span><br><span class="line">    COUNT = 0</span><br><span class="line"></span><br><span class="line">    # 若小于总帧数则读一帧图像</span><br><span class="line">    while COUNT &lt; totalFrameNumber:</span><br><span class="line">        # 一帧一帧图像读取</span><br><span class="line">        ret, frame = cap.read()</span><br><span class="line">        # 把每一帧图像保存成jpg格式（这一行可以根据需要选择保留）</span><br><span class="line">        cv2.imwrite(str(COUNT).zfill(3) + &apos;.jpg&apos;, frame)</span><br><span class="line">        # 显示这一帧地图像</span><br><span class="line">        # cv2.imshow(&apos;video&apos;, frame)</span><br><span class="line">        COUNT = COUNT + 1</span><br><span class="line">        # 延时一段33ms（1s➗30帧）再读取下一帧，如果没有这一句便无法正常显示视频</span><br><span class="line">        # cv2.waitKey(33)</span><br><span class="line"></span><br><span class="line">    cap.release()</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;使用cv2将转换后的mp4视频提取出每一帧，保存在本地<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def eye_aspect_ratio(eye):</span><br><span class="line">    point0 = eye[0]</span><br><span class="line">    point1 = eye[1]</span><br><span class="line">    point2 = eye[2]</span><br><span class="line">    point3 = eye[3]</span><br><span class="line">    point4 = eye[4]</span><br><span class="line">    point5 = eye[5]</span><br><span class="line">    temp = math.pow(point1[0] - point5[0], 2), math.pow(point1[1] - point5[1], 2)</span><br><span class="line">    distance1 = math.sqrt(math.fsum(temp))</span><br><span class="line">    temp = math.pow(point2[0] - point4[0], 2), math.pow(point2[1] - point4[1], 2)</span><br><span class="line">    distance2 = math.sqrt(math.fsum(temp))</span><br><span class="line">    temp = math.pow(point0[0] - point3[0], 2), math.pow(point0[1] - point3[1], 2)</span><br><span class="line">    distance3 = math.sqrt(math.fsum(temp))</span><br><span class="line">    return (distance1 + distance2) / (2 * distance3)</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;传入一只眼睛的6个标记点列表，眼部的标记点如下<br>  <img src="/face_recognition_login/2019/04/24/face-video-recognition/article-ear.png" title="论文作者对开/闭眼的ear值测算"><br>&emsp;&emsp;根据以下公式计算ear值<br>  <img src="/face_recognition_login/2019/04/24/face-video-recognition/EAR.png" title="EAR公式"><br>&emsp;&emsp;返回眼睛的EAR值<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">def detection_blink():</span><br><span class="line">    num = 0</span><br><span class="line">    left_blink, right_blink = (False, False)</span><br><span class="line">    infile = &apos;temp.webm&apos;</span><br><span class="line">    outfile = &apos;temp.mp4&apos;</span><br><span class="line">    translate(infile, outfile)</span><br><span class="line">    video2frame(outfile)</span><br><span class="line"></span><br><span class="line">    files = glob.glob(os.path.join(&apos;.&apos;, &quot;*.jpg&quot;))</span><br><span class="line">    for f in files:</span><br><span class="line">        unknown_face = face_recognition.load_image_file(f)</span><br><span class="line">        locate_unknown_face = face_recognition.face_locations(unknown_face)</span><br><span class="line">        landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)</span><br><span class="line">        left_eye = landmards[0][&apos;left_eye&apos;]</span><br><span class="line">        right_eye = landmards[0][&apos;right_eye&apos;]</span><br><span class="line">        left_ear = eye_aspect_ratio(left_eye)</span><br><span class="line">        right_ear = eye_aspect_ratio(right_eye)</span><br><span class="line"></span><br><span class="line">        if left_ear &lt; 0.20:</span><br><span class="line">            left_blink = True</span><br><span class="line">        if right_ear &lt; 0.20:</span><br><span class="line">            right_blink = True</span><br><span class="line"></span><br><span class="line">        if left_ear &gt;= 0.20 and right_ear &gt;= 0.20 and left_blink and right_blink:</span><br><span class="line">            num += 1</span><br><span class="line">            right_blink = False</span><br><span class="line">            left_blink = False</span><br><span class="line"></span><br><span class="line">    return num</span><br></pre></td></tr></table></figure><br>&emsp;&emsp;该函数整合以上处理函数，调用<b>translate</b>函数将webm转换为mp4格式，调用<b>video2frame</b>将mp4文件转换为帧集，对每一帧数据调用<b>face_recognition.face_locations</b>函数(HOG+SVM)先获得人脸位置，再通过<b>face_recognition.face_landmarks</b>函数，获得该图片中人脸的68个标记点，对于眨眼视频，我们通过检测眨眼瞬间的次数来简单的代表眨眼次数，若两个眼睛的前几帧检测到状态均有闭眼时，当出现一次两只眼睛均睁开的状态时，我们就认为出现了眨眼瞬间，记为一次眨眼，累计眨眼次数并返回给调用函数<br>&emsp;&emsp;注：face_recognition.face_landmarks是调用dlib中的shape_predictor函数，该dlib函数传入的一个参数是姿态检测器路径，有一个68个标记点的姿态检测器是dlib结合CVPR 2014年论文<a href="http://www.csc.kth.se/~vahidk/papers/KazemiCVPR14.pdf" target="_self">《One Millisecond Face Alignment with an Ensemble of Regression Trees》</a>与<a href="https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/" target="_self">iBUG 300-W人脸数据集</a>训练得来的,该检测器可通过该<a href="http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2" target="_self">url</a>获得</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/face_recognition_login/2019/04/20/face-photo-recognition/" rel="next" title="face_photo_recognition">
+                <i class="fa fa-chevron-left"></i> face_photo_recognition
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">Show comments from Gitment</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">xinhuikang</p>
+              <p class="site-description motion-element" itemprop="description">face_login_desc</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/face_recognition_login/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端解读"><span class="nav-number">2.1.</span> <span class="nav-text">前端解读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台解读"><span class="nav-number">2.2.</span> <span class="nav-text">后台解读</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xinhuikang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/face_recognition_login/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/face_recognition_login/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/face_recognition_login/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/face_recognition_login/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/face_recognition_login/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/face_recognition_login/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'xinhuikang',
+            repo: 'https://github.com/xinhuikang/face_recognition_login',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '0ca22f9b2781e4ae4c8c4f43578b8756d9c75e41',
+            
+                client_id: '9402e89d94ea8769190f'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/face_recognition_login/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/face_recognition_login/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
