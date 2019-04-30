@@ -25,7 +25,7 @@ SECRET_KEY = '0d5ub3(ls_hapd-298&-7e_5i#=c&wc-%si#b%c1ul!^k65^55'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["10.63.236.213", "172.30.12.1", "localhost"]
+ALLOWED_HOSTS = ["10.63.236.213", "167.179.115.244", "localhost"]
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'employees',
     'employees.apps.SuitConfig',
     # 'suit',
+    'sslserver',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'codingant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django', #'django.db.backends.mysql'
+        'ENGINE': 'django.db.backends.mysql', #'mysql.connector.django', #'django.db.backends.mysql'
         # 'OPTIONS': {
         #     'read_default_file': os.path.join(BASE_DIR, 'codingant/db.conf')
         # }

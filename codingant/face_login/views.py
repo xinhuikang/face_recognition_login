@@ -9,7 +9,15 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import cv2
 import ffmpy3
-import os, glob, time
+import os, glob, sys, time
+from multiprocessing import Manager
+from multiprocessing import Pool
+import numpy as np
+
+
+# Create your views here.
+def login(request):
+    return render(request, 'login_registration.html')
 
 
 def register(request):
@@ -101,7 +109,7 @@ def auth_user(img):
         "AuthName": AuthName
     }
 
-    os.system('del *.jpg')
+    os.system('rm *.jpg')
     return JsonBackInfo
 
 
@@ -134,13 +142,12 @@ def loginFaceCheck(request):
                     ori_login(request, user)
 
         return JsonResponse(JsonBackInfo)
-    else:
-        return render(request, 'login_registration.html')
 
 
 @csrf_exempt
 def test(request):
     if request.method == "POST":
+        startt = time.time()
         start = time.clock()
         videos = request.FILES['faceVideo']
         fileName = 'temp.webm'
@@ -151,15 +158,18 @@ def test(request):
         end = time.clock()
         print("video_get_write:", end - start)
 
-        start = time.clock()
-        num = detection_blink()
-        end = time.clock()
+        start = time.time()
+        os.system('python3 multiprocess_test.py')
+        while len(glob.glob(os.path.join('.', "*.npy"))) == 0:
+            pass
+        num = int(np.load('temp.npy'))
+        end = time.time()
         print("Blink_video_stream:", end - start)
 
         files = glob.glob(os.path.join('.', "*.jpg"))
         imgName = files[int(len(files) / 2)]
         jsonInfo = auth_user(imgName)
-        os.system('del *.mp4 *.webm *.npy')
+        os.system('rm *.mp4 *.npy')
         JsonBackInfo = {
             "canLogin": jsonInfo['canLogin'],
             "AuthName": jsonInfo['AuthName'],
@@ -171,7 +181,8 @@ def test(request):
             if user is not None:
                 if user.is_active:
                     ori_login(request, user)
-
+        
+        print("total_time:", time.time() - startt)
         return JsonResponse(JsonBackInfo)
     else:
         return render(request, 'test.html')
@@ -215,7 +226,7 @@ def video2frame(videofile):
         # cv2.imshow('video', frame)
         COUNT = COUNT + 1
         # 延时一段33ms（1s➗30帧）再读取下一帧，如果没有这一句便无法正常显示视频
-        # cv2.waitKey(33)
+        cv2.waitKey(33)
 
     cap.release()
 
@@ -228,6 +239,17 @@ def translate(infile, outfile):
     ff.run()
 
 
+def piece_state(f, i, d):
+    unknown_face = face_recognition.load_image_file(f)
+    locate_unknown_face = face_recognition.face_locations(unknown_face)
+    landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)
+    left_eye = landmards[0]['left_eye']
+    right_eye = landmards[0]['right_eye']
+    left_ear = eye_aspect_ratio(left_eye)
+    right_ear = eye_aspect_ratio(right_eye)
+    d[i] = (left_ear, right_ear)
+
+
 def detection_blink():
     num = 0
     left_blink, right_blink = (False, False)
@@ -235,17 +257,20 @@ def detection_blink():
     outfile = 'temp.mp4'
     translate(infile, outfile)
     video2frame(outfile)
+    pool = Pool(processes=4)
+    d = Manager().dict()
 
     files = glob.glob(os.path.join('.', "*.jpg"))
-    for f in files:
-        unknown_face = face_recognition.load_image_file(f)
-        locate_unknown_face = face_recognition.face_locations(unknown_face)
-        landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)
-        left_eye = landmards[0]['left_eye']
-        right_eye = landmards[0]['right_eye']
-        left_ear = eye_aspect_ratio(left_eye)
-        right_ear = eye_aspect_ratio(right_eye)
+    print('files', files)
+    for f, i in zip(files, range(len(files))):
+        pool.apply(piece_state, (f, i, d))# _async
 
+    pool.close()
+    pool.join()
+
+    print('dict:', d)
+    for i in sorted(d):
+        left_ear, right_ear = d[i]
         if left_ear < 0.20:
             left_blink = True
         if right_ear < 0.20:

@@ -19,16 +19,9 @@
               </p>
               <p>
                   <button id="start">开启摄像头</button>
-                  <button id="snap" disabled>截取图像</button>
+                  <button id="snap">截取图像</button>
               </p>
-              <p><input type="button" id="upload" value="Submit" disabled/></p>
-              <div>
-                <h4>Media Stream Constraints options</h4>
-                <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-              </div>
-              <div>
-                  <span id="errorMsg"></span>
-              </div>
+              <p><input type="button" id="upload" value="Submit" /></p>
       </div>
     </div>
 {% endblock %}
@@ -48,52 +41,41 @@
       video = $('video'),
       snapButton = $('#snap'),
       startButton = $('#start'),
-      uploadButton = $('#upload'),
       mediaStreamTrack;
 
   // 截取图像
-  snapButton.addEventListener('click', function() {
+  snap.addEventListener('click', function() {
     context.drawImage(video, 0, 0, 200, 150);
-    uploadButton.disabled = false;
   }, false);
 
   $("#upload").addEventListener('click', function() {
-    var csrfToken = document.getElementsByName("csrfmiddlewaretoken");
+      var csrfToken = document.getElementsByName("csrfmiddlewaretoken");
 
-    jQuery.ajax({
-        type:"POST",
-        url:"/face/login/loginFaceCheck/",
-        //必须添加 csrf_token
-        dataType:'json',
-        data:{
-            "id":1,
-            "faceImg":canvas.toDataURL('image/png'),
-            'csrfmiddlewaretoken':csrfToken[0].value//csrfToken
-        },
-        success:function (displayList) {
-            //处理认证后的数据 
-            if (displayList.canLogin === true){
-                alert("验证成功！");
-                alert(displayList.AuthName);
-                window.location.href='/accounts/profile/';
-            }
-            else{
-                alert("验证失败！");
-            }
-        },
-        error:function () {
-          alert("验证失败: 未检测到人脸！");
-        }
-    })
+      jQuery.ajax({
+          type:"POST",
+          url:"/face/login/loginFaceCheck/",
+          //必须添加 csrf_token
+          dataType:'json',
+          data:{
+              "id":1,
+              "faceImg":canvas.toDataURL('image/png'),
+              'csrfmiddlewaretoken':csrfToken[0].value//csrfToken
+          },
+          success:function (displayList) {
+              //处理认证后的数据 
+              if (displayList.canLogin === true){
+                  alert("验证成功！");
+                  alert(displayList.AuthName);
+                  window.location.href='/accounts/profile/';
+              }
+              else{
+                  alert("验证失败！");
+              }
+          },
+          error:function () {
+            alert("验证失败: 未检测到人脸！");
+          })
   }, false);
-
-  function handleSuccess(stream) {
-    snapButton.disabled = false;
-    console.log('getUserMedia() got stream:', stream);
-    //window.stream = stream;
-
-    video.srcObject = stream;
-  }
 
   async function init(constraints) {
     try {

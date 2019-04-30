@@ -25,28 +25,17 @@ def eye_aspect_ratio(eye):
 
 
 def video2frame(videofile):
-    # 读取视频
     cap = cv2.VideoCapture(videofile)
-    # 获取FPS(每秒传输帧数(Frames Per Second))
     fps = cap.get(cv2.CAP_PROP_FPS)
-    # 获取总帧数
     totalFrameNumber = cap.get(cv2.CAP_PROP_FRAME_COUNT)
     print(fps)
     print(totalFrameNumber)
-    # 当前读取到第几帧
     COUNT = 0
 
-    # 若小于总帧数则读一帧图像
     while COUNT < totalFrameNumber:
-        # 一帧一帧图像读取
         ret, frame = cap.read()
-        # 把每一帧图像保存成jpg格式（这一行可以根据需要选择保留）
         cv2.imwrite(str(COUNT).zfill(3) + '.jpg', frame)
-        # 显示这一帧地图像
-        # cv2.imshow('video', frame)
         COUNT = COUNT + 1
-        # 延时一段33ms（1s➗30帧）再读取下一帧，如果没有这一句便无法正常显示视频
-        cv2.waitKey(33)
 
     cap.release();
 
@@ -54,20 +43,25 @@ def video2frame(videofile):
 def translate(infile, outfile):
     ff = ffmpy3.FFmpeg(
         inputs={infile: None},
-        outputs={outfile: '-r 25 -y'}
+        outputs={outfile: '-r 20 -y -an'}
     )
     ff.run()
 
 
 def piece_state(f, i, dict):
-    unknown_face = face_recognition.load_image_file(f)
-    locate_unknown_face = face_recognition.face_locations(unknown_face)
-    landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)
-    left_eye = landmards[0]['left_eye']
-    right_eye = landmards[0]['right_eye']
-    left_ear = eye_aspect_ratio(left_eye)
-    right_ear = eye_aspect_ratio(right_eye)
-    dict[i] = (left_ear, right_ear)
+    start = time.clock()
+    for ff, ii in zip(f, range(len(f))):
+        unknown_face = face_recognition.load_image_file(ff)
+        locate_unknown_face = face_recognition.face_locations(unknown_face)
+        landmards = face_recognition.face_landmarks(unknown_face, locate_unknown_face)
+        left_eye = landmards[0]['left_eye']
+        right_eye = landmards[0]['right_eye']
+        left_ear = eye_aspect_ratio(left_eye)
+        right_ear = eye_aspect_ratio(right_eye)
+        dict[ii + i] = (left_ear, right_ear)
+
+    end = time.clock()
+    print('piece_time:', end - start)
 
 
 def detection_blink():
@@ -77,20 +71,21 @@ def detection_blink():
     outfile = 'temp.mp4'
     translate(infile, outfile)
     video2frame(outfile)
-    pool = Pool(processes=4)
-    results = []
+    pool = Pool(processes=24)
     dict = Manager().dict()
 
     files = glob.glob(os.path.join('.', "*.jpg"))
-    print('files', files)
-    for f, i in zip(files, range(len(files))):
-        pool.apply_async(piece_state, (f, i, dict))
+    files.sort()
+    step = (len(files) + 23) // 24
+    jpgs = [files[i:i + step] for i in range(0, len(files), step)]
+    for f, i in zip(jpgs, range(len(jpgs))):
+        pool.apply_async(piece_state, (f, i * step, dict))
 
     pool.close()
     pool.join()
 
-    print('dict:', dict)
     for i in sorted(dict):
+        print(i, ":", dict[i])
         left_ear, right_ear = dict[i]
         if left_ear < 0.20:
             left_blink = True

@@ -1,4 +1,3 @@
-<!-- login_registration -->
 {% extends 'base.html' %}
 {% block title %}Register{% endblock %}
 {% block page_style %}
@@ -12,8 +11,12 @@
 {% block page_content %}
     <div class="row">
       <div class="col-md-4 offset-md-4 text-md-center">
-        <h1>Face Login</h1>
+        <h1>register</h1>
               {% csrf_token %}
+              <p>Username:<input type="text" required="required" id="uname" /></p>
+              <!--Firstname: <input type="text" required="required" name="fname">-->
+              <!--Lastname: <input type="text" required="required" name="lname">-->
+              <p>Password:<input type="password" required="required" id="password" /></p>
               <p>
                   <video width="200" height="150"></video>
                   <canvas width="200" height="150"></canvas>
@@ -87,15 +90,19 @@
 
     $("#upload").addEventListener('click', function() {
         var csrfToken = document.getElementsByName("csrfmiddlewaretoken");
+        var name = document.getElementById("uname");
+        var password = document.getElementById("password");
 
         jQuery.ajax({
             type:"POST",
-            url:"/face/login/loginFaceCheck/",
+            url:"/face/register/",
             //必须添加 csrf_token
             dataType:'json',
             data:{
                 "id":1,
                 "faceImg":canvas.toDataURL('image/png'),
+                "uname": name.value,
+                "password": password.value,
                 'csrfmiddlewaretoken':csrfToken[0].value//csrfToken
             },
             success:function (displayList) {
@@ -115,6 +122,38 @@
             }
             })
   }, false);
+  function handleSuccess(stream) {
+  recordButton.disabled = false;
+  console.log('getUserMedia() got stream:', stream);
+  window.stream = stream;
+
+  const gumVideo = document.querySelector('video#gum');
+  gumVideo.srcObject = stream;
+}
+
+async function init(constraints) {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    console.error('navigator.getUserMedia error:', e);
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+document.querySelector('button#start').addEventListener('click', async () => {
+  const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+  const constraints = {
+    audio: {
+      echoCancellation: {exact: hasEchoCancellation}
+    },
+    video: {
+      width: 1280, height: 720
+    }
+  };
+  console.log('Using media constraints:', constraints);
+  await init(constraints);
+});
   </script>
 {% endblock %}
 

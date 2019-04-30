@@ -22,10 +22,17 @@
                   <canvas width="200" height="150"></canvas>
               </p>
               <p>
-                  <button id="snap">截取图像</button>
-                  <button id="close">关闭摄像头</button>
+                  <button id="start">开启摄像头</button>
+                  <button id="snap" disabled>截取图像</button>
               </p>
-              <p><input type="button" id="upload" value="Submit" /></p>
+              <p><input type="button" id="upload" value="Submit" disabled/></p>
+              <div>
+                <h4>Media Stream Constraints options</h4>
+                <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+              </div>
+              <div>
+                  <span id="errorMsg"></span>
+              </div>
       </div>
     </div>
 {% endblock %}
@@ -37,91 +44,83 @@
     return document.querySelector(elem);
   }
 
-  // 获取媒体方法（旧方法）
-  navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMeddia || navigator.msGetUserMedia;
-
   var canvas = $('canvas'),
-    context = canvas.getContext('2d'),
-    video = $('video'),
-    snap = $('#snap'),
-    close = $('#close'),
-    mediaStreamTrack;
-
-  // 获取媒体方法（新方法）
-  // 使用新方法打开摄像头
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({
-      video: true,
-      audio: true
-    }).then(function(stream) {
-      console.log(stream);
-
-      mediaStreamTrack = typeof stream.stop === 'function' ? stream : stream.getTracks()[1];
-
-      video.src = (window.URL || window.webkitURL).createObjectURL(stream);
-      video.play();
-    }).catch(function(err) {
-      console.log(err);
-    })
-  }
-  // 使用旧方法打开摄像头
-  else if (navigator.getMedia) {
-    navigator.getMedia({
-      video: true
-    }, function(stream) {
-      mediaStreamTrack = stream.getTracks()[0];
-
-      video.src = (window.URL || window.webkitURL).createObjectURL(stream);
-      video.play();
-    }, function(err) {
-      console.log(err);
-    });
-  }
+      context = canvas.getContext('2d'),
+      video = $('video'),
+      snapButton = $('#snap'),
+      uploadButton = $('#upload'),
+      mediaStreamTrack;
 
   // 截取图像
   snap.addEventListener('click', function() {
     context.drawImage(video, 0, 0, 200, 150);
+    uploadButton.disabled = false;
   }, false);
 
-  // 关闭摄像头
-  close.addEventListener('click', function() {
-    mediaStreamTrack && mediaStreamTrack.stop();
-  }, false);
+  $("#upload").addEventListener('click', function() {
+    var csrfToken = document.getElementsByName("csrfmiddlewaretoken");
+    var name = document.getElementById("uname");
+    var password = document.getElementById("password");
 
-    $("#upload").addEventListener('click', function() {
-        var csrfToken = document.getElementsByName("csrfmiddlewaretoken");
-        var name = document.getElementById("uname");
-        var password = document.getElementById("password");
-
-        jQuery.ajax({
-            type:"POST",
-            url:"/face/register/",
-            //必须添加 csrf_token
-            dataType:'json',
-            data:{
-                "id":1,
-                "faceImg":canvas.toDataURL('image/png'),
-                "uname": name.value,
-                "password": password.value,
-                'csrfmiddlewaretoken':csrfToken[0].value//csrfToken
-            },
-            success:function (displayList) {
-                <!--// 处理认证后的数据-->
-                if (displayList.canLogin === true){
-                    alert("验证成功！");
-                    alert(displayList.AuthName);
-                    window.location.href='/accounts/profile/';
-                }
-                else{
-                    alert("验证失败！");
-                }
-            },
-            error:function () {
-              alert("验证失败: 未检测到人脸！");
-               <!--DisplayNo1.text("验证失败: 未检测到人脸").removeClass("label-success").addClass("label-danger");-->
+    jQuery.ajax({
+        type:"POST",
+        url:"/face/register/",
+        //必须添加 csrf_token
+        dataType:'json',
+        data:{
+            "id":1,
+            "faceImg":canvas.toDataURL('image/png'),
+            "uname": name.value,
+            "password": password.value,
+            'csrfmiddlewaretoken':csrfToken[0].value//csrfToken
+        },
+        success:function (displayList) {
+            if (displayList.canLogin === true){
+                alert("验证成功！");
+                alert(displayList.AuthName);
+                window.location.href='/accounts/profile/';
             }
-            })
+            else{
+                alert("验证失败！");
+            }
+        },
+        error:function () {
+          alert("验证失败: 未检测到人脸！");
+        }
+    })
   }, false);
+  
+  function handleSuccess(stream) {
+    snapButton.disabled = false;
+    console.log('getUserMedia() got stream:', stream);
+    //window.stream = stream;
+
+    video.srcObject = stream;
+  }
+
+  async function init(constraints) {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      handleSuccess(stream);
+    } catch (e) {
+      console.error('navigator.getUserMedia error:', e);
+      errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    }
+  }
+
+  document.querySelector('button#start').addEventListener('click', async () => {
+    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+    const constraints = {
+      audio: {
+        echoCancellation: {exact: hasEchoCancellation}
+      },
+      video: {
+        width: 1280, height: 720
+      }
+    };
+    console.log('Using media constraints:', constraints);
+    await init(constraints);
+  });
   </script>
 {% endblock %}
 
