@@ -9,26 +9,31 @@
 {% endblock %}
 
 {% block page_content %}
-  <h1>Face Login</h1>
-    {% csrf_token %}
-    <div>
-	    <video autoplay muted></video>
-	    <canvas width="480" height="320"></canvas>
-    </div>
-    <button id="start">开启摄像头</button>
-    <button id="snap" disabled>截取图像</button>
-    <p><input type="button" id="upload" value="Submit" disabled/></p>
-    <div>
-	 <h4>Media Stream Constraints options</h4>
-	 <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-    </div>
-    <div>
-	    <span id="errorMsg"></span>
+    <div class="row">
+      <div class="col-md-4 offset-md-4 text-md-center">
+        <h1>Face Login</h1>
+              {% csrf_token %}
+              <div>
+                  <video width="400" height="300" autoplay muted></video>
+                  <canvas width="400" height="300"></canvas>
+              </div>
+              <p>
+                  <button id="start">开启摄像头</button>
+                  <button id="snap" disabled>截取图像</button>
+              </p>
+              <p><input type="button" id="upload" value="Submit" disabled/></p>
+              <div>
+                <h4>Media Stream Constraints options</h4>
+                <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+              </div>
+              <div>
+                  <span id="errorMsg"></span>
+              </div>
+      </div>
     </div>
 {% endblock %}
 
 {% block page_script %}
-<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
   function $(elem) {
@@ -45,10 +50,8 @@
 
   // 截取图像
   snapButton.addEventListener('click', function() {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      uploadButton.disabled = false;
+    context.drawImage(video, 0, 0, 400, 300);
+    uploadButton.disabled = false;
   }, false);
 
   uploadButton.addEventListener('click', function() {

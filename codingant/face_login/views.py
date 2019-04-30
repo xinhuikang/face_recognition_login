@@ -185,7 +185,7 @@ def test(request):
         print("total_time:", time.time() - startt)
         return JsonResponse(JsonBackInfo)
     else:
-        return render(request, 'test.html')
+        return render(request, 'random-instruction.html')
 
 
 def eye_aspect_ratio(eye):
