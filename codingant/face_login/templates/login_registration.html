@@ -12,8 +12,8 @@
   <h1>Face Login</h1>
     {% csrf_token %}
     <div>
-	    <video autoplay muted></video>
-	    <canvas width="480" height="320"></canvas>
+	    <video width="400" height="300" autoplay muted></video>
+	    <canvas width="400" height="300"></canvas>
     </div>
     <button id="start">开启摄像头</button>
     <button id="snap" disabled>截取图像</button>
@@ -76,7 +76,7 @@
             }
         },
         error:function () {
-          alert("验证失败: 未检测到人脸！");
+          alert("验证失败: 请勿遮挡面部！");
         }
     })
   }, false);
