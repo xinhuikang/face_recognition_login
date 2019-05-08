@@ -18,7 +18,7 @@
               <!--Lastname: <input type="text" required="required" name="lname">-->
               <p>Password:<input type="password" required="required" id="password" /></p>
               <p>
-                  <video width="400" height="300" autoplay muted></video>
+                  <video autoplay muted></video>
                   <canvas ></canvas>
               </p>
               <p>
@@ -88,7 +88,7 @@
             }
         },
         error:function () {
-          alert("验证失败: 请勿遮挡面部！");
+          alert("验证失败: 未检测到人脸！");
         }
     })
   }, false);

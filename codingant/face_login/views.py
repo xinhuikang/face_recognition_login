@@ -9,10 +9,11 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import cv2
 import ffmpy3
-import os, glob, sys, time
+import os, glob, time
 from multiprocessing import Manager
 from multiprocessing import Pool
 import numpy as np
+import random
 
 
 # Create your views here.
@@ -113,6 +114,7 @@ def auth_user(img):
     return JsonBackInfo
 
 
+@csrf_exempt
 def loginFaceCheck(request):
     if request.method == "POST" and request.is_ajax():
         # 获取base64格式的图片
@@ -144,8 +146,13 @@ def loginFaceCheck(request):
         return JsonResponse(JsonBackInfo)
 
 
+def face_action_detect(request):
+    rand = random.randint(0, 1)
+    return render(request, 'random-instruction.html', {'rand': rand})
+
+
 @csrf_exempt
-def test(request):
+def eye_blink_detect(request):
     if request.method == "POST":
         startt = time.time()
         start = time.clock()
@@ -182,6 +189,49 @@ def test(request):
                 if user.is_active:
                     ori_login(request, user)
         
+        print("total_time:", time.time() - startt)
+        return JsonResponse(JsonBackInfo)
+
+
+@csrf_exempt
+def month_open_detect(request):
+    if request.method == "POST":
+        startt = time.time()
+        start = time.clock()
+        videos = request.FILES['faceVideo']
+        fileName = 'temp.webm'
+        # file = uploadedfile.File(videos)
+        with open(fileName, 'wb') as f:
+            for chunk in videos.chunks():
+                f.write(chunk)
+        end = time.clock()
+        print("video_get_write:", end - start)
+
+        start = time.time()
+        os.system('python3 mouth_open.py')
+        while len(glob.glob(os.path.join('.', "*.npy"))) == 0:
+            pass
+        num = int(np.load('temp.npy'))
+        end = time.time()
+        print("Blink_video_stream:", end - start)
+
+        files = glob.glob(os.path.join('.', "*.jpg"))
+        imgName = files[int(len(files) / 2)]
+        jsonInfo = auth_user(imgName)
+        os.system('rm *.mp4 *.npy')
+        JsonBackInfo = {
+            "canLogin": jsonInfo['canLogin'],
+            "AuthName": jsonInfo['AuthName'],
+            'open_num': num
+        }
+
+        if jsonInfo['AuthName'] != "未授权用户" and num == 2:
+            user = User.objects.get_by_natural_key(
+                username=jsonInfo['AuthName'])  # authenticate(username='admin', password='123456')
+            if user is not None:
+                if user.is_active:
+                    ori_login(request, user)
+
         print("total_time:", time.time() - startt)
         return JsonResponse(JsonBackInfo)
     else:

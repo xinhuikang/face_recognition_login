@@ -1,9 +1,9 @@
-from multiprocessing import Process
-from multiprocessing import Manager
 from multiprocessing import Pool
+from multiprocessing import Manager
+import numpy as np
 import cv2
 import ffmpy3
-import os, glob, sys, time
+import os, glob, time
 import face_recognition
 import math
 
@@ -59,7 +59,7 @@ def video2frame(videofile):
 def translate(infile, outfile):
     ff = ffmpy3.FFmpeg(
         inputs={infile: None},
-        outputs={outfile: '-r 25 -y -an'}
+        outputs={outfile: '-r 20 -y -an'}
     )
     ff.run()
 
@@ -82,7 +82,7 @@ import multiprocessing
 def detection_open():
     num = 0
     mouth_open = (False)
-    infile = 'test.webm'#'Android-webm/temp.webm'
+    infile = 'temp.webm'#'Android-webm/temp.webm'
     outfile = 'temp.mp4'
     
     start = time.clock()
@@ -92,22 +92,20 @@ def detection_open():
     print('trans_time:', end - start)
     
     start = time.clock()
+    pool = Pool(processes=24)
     dict = Manager().dict()
 
     files = glob.glob(os.path.join('.', "*.jpg"))
-    step = int(len(files) / 3) + 1
+    files.sort()
+    step = (len(files) + 23) // 24
     jpgs = [files[i:i + step] for i in range(0, len(files), step)]
-    jobs = []
-#    print('jpgs', jpgs)
-    for f, i in zip(jpgs, range(3)):
-        p = multiprocessing.Process(target=mouth_state, args=(f, i * step, dict))
-        jobs.append(p)
-        p.start()
+    for f, i in zip(jpgs, range(len(jpgs))):
+        pool.apply_async(mouth_state, (f, i * step, dict))
 
-    for i in jobs:
-        i.join()
+    pool.close()
+    pool.join()
 
-#    print('dict:', dict)
+    print('dict:', dict)
     for i in sorted(dict):
         print(i, dict[i])
         mouth_mar = dict[i]
@@ -125,7 +123,8 @@ def detection_open():
 
 
 if __name__ == '__main__':
-#    start = time.clock()
+    start = time.clock()
     number = detection_open()
-#    end = time.clock()
+    end = time.clock()
     print(number)
+    np.save('temp', number)

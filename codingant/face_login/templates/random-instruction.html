@@ -40,7 +40,7 @@
             href="http://w3c.github.io/mediacapture-record/MediaRecorder.html"
             title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>
 
-    <video id="gum" width="400" height="300" autoplay muted></video>
+    <video id="gum" playsinline autoplay muted></video>
     <video id="recorded" playsinline loop></video>
 
     <div>
@@ -88,6 +88,7 @@
 let mediaRecorder;
 let recordedBlobs;
 let sourceBuffer;
+var rand;
 
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
@@ -114,82 +115,130 @@ playButton.addEventListener('click', () => {
 
 
 function handleDataAvailable(event) {
-  if (event.data && event.data.size > 0 && mediaRecorder.state != 'inactive') {
-    console.log('event.data', event.data);
-    console.log('-----------------------------------------------------------');
-    recordedBlobs.push(event.data);
-    recordButton.click();
-    var formData = new FormData();
-    //formData.append('video-filename', file.name);
-    formData.append("faceVideo", event.data);
-    //console.log('file:', file);
-    jQuery.ajax({
-        type:"POST",
-        url:"/face/test/",
-        //必须添加 csrf_token
-        contentType:"video/webm",
-        data:formData,
-        dataType: "json",
-        cache: false,//上传文件无需缓存
-        processData: false, // 告诉jQuery不要去处理发送的数据
-        contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+    if (event.data && event.data.size > 0 && mediaRecorder.state != 'inactive') {
+        if( rand == 0)
+        {
+            recordedBlobs.push(event.data);
+            recordButton.click();
+            var formData = new FormData();
+            formData.append("faceVideo", event.data);
+            jQuery.ajax({
+                type:"POST",
+                url:"/face/action_detect/eye_blink_detect/",
+                //必须添加 csrf_token
+                contentType:"video/webm",
+                data:formData,
+                dataType: "json",
+                cache: false,//上传文件无需缓存
+                processData: false, // 告诉jQuery不要去处理发送的数据
+                contentType: false, // 告诉jQuery不要去设置Content-Type请求头
 
-        success:function (displayList) {
-            if (displayList.canLogin === true){
-                alert("验证成功！");
-                alert('Blinks:' + displayList.blink_num);
-                alert(displayList.AuthName);
-                window.location.href='/accounts/profile/';
-            }
-            else{
-                alert("验证失败！");
-                alert(displayList.blink_num);
-            }
-        },
-        error:function () {
-          alert("验证失败: 请勿遮挡面部！");
+                success:function (displayList) {
+                    if (displayList.canLogin === true){
+                        alert("验证成功！");
+                        alert('Blinks:' + displayList.blink_num);
+                        alert(displayList.AuthName);
+                        window.location.href='/accounts/profile/';
+                    }
+                    else{
+                        alert("验证失败！");
+                        alert(displayList.blink_num);
+                    }
+                },
+                error:function () {
+                  alert("验证失败: 未检测到人脸！");
+                }
+            })
         }
-    })
-  }
+        else
+       {
+            recordedBlobs.push(event.data);
+            recordButton.click();
+            var formData = new FormData();
+            formData.append("faceVideo", event.data);
+            jQuery.ajax({
+                type:"POST",
+                url:"/face/action_detect/month_open_detect/",
+                //必须添加 csrf_token
+                contentType:"video/webm",
+                data:formData,
+                dataType: "json",
+                cache: false,//上传文件无需缓存
+                processData: false, // 告诉jQuery不要去处理发送的数据
+                contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+
+                success:function (displayList) {
+                    if (displayList.canLogin === true){
+                        alert("验证成功！");
+                        alert('mouth_open:' + displayList.open_num);
+                        alert(displayList.AuthName);
+                        window.location.href='/accounts/profile/';
+                    }
+                    else{
+                        alert("验证失败！");
+                        alert(displayList.blink_num);
+                    }
+                },
+                error:function () {
+                  alert("验证失败: 未检测到人脸！");
+                }
+            })
+        }
+    }
 }
 
 function startRecording() {
-  recordedBlobs = [];
-  let options = {mimeType: 'video/webm;codecs=vp9'};
-  if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-    console.error(`${options.mimeType} is not Supported`);
-    errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-    options = {mimeType: 'video/webm;codecs=vp8'};
+    recordedBlobs = [];
+    let options = {mimeType: 'video/webm;codecs=vp9'};
     if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-      console.error(`${options.mimeType} is not Supported`);
-      errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-      options = {mimeType: 'video/webm'};
-      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
         console.error(`${options.mimeType} is not Supported`);
         errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-        options = {mimeType: ''};
-      }
+        options = {mimeType: 'video/webm;codecs=vp8'};
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            console.error(`${options.mimeType} is not Supported`);
+            errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
+            options = {mimeType: 'video/webm'};
+            if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                console.error(`${options.mimeType} is not Supported`);
+                errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
+                options = {mimeType: ''};
+            }
+        }
     }
-  }
 
-  try {
-    mediaRecorder = new MediaRecorder(window.stream, options);
-  } catch (e) {
-    console.error('Exception while creating MediaRecorder:', e);
-    errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
-    return;
-  }
+    try {
+        mediaRecorder = new MediaRecorder(window.stream, options);
+    } catch (e) {
+        console.error('Exception while creating MediaRecorder:', e);
+        errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+        return;
+    }
 
-  console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-  recordButton.textContent = 'Uploading...';
-  playButton.disabled = true;
-  mediaRecorder.onstop = (event) => {
-    console.log('Recorder stopped: ', event);
-  };
-  mediaRecorder.ondataavailable = handleDataAvailable;
-  mediaRecorder.start(3000); // collect 10ms of data
-  console.log('MediaRecorder started', mediaRecorder);
-  //recordButton.click();
+    rand = {{ rand }};
+    {% if rand == 0 %}
+        alert("3秒内眨眼两次");
+        console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
+        recordButton.textContent = 'Uploading...';
+        playButton.disabled = true;
+        mediaRecorder.onstop = (event) => {
+            console.log('Recorder stopped: ', event);
+        };
+        mediaRecorder.ondataavailable = handleDataAvailable;
+        mediaRecorder.start(3000); // collect 10ms of data
+        console.log('MediaRecorder started', mediaRecorder);
+    {% endif %}
+    {% if rand == 1 %}
+        alert("请在4秒内平缓张嘴两次");
+        console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
+        recordButton.textContent = 'Uploading...';
+        playButton.disabled = true;
+        mediaRecorder.onstop = (event) => {
+            console.log('Recorder stopped: ', event);
+        };
+        mediaRecorder.ondataavailable = handleDataAvailable;
+        mediaRecorder.start(4000); // collect 10ms of data
+        console.log('MediaRecorder started', mediaRecorder);
+    {% endif %}
 }
 
 function stopRecording() {
