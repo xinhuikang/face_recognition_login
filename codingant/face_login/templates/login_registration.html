@@ -6,25 +6,27 @@
       color: red;
     }
   </style>
+    <link href="/static/css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/main(1).css">
 {% endblock %}
 
 {% block page_content %}
+<div class="row">
+  <div class="col-md-4 offset-md-4 text-md-center">
   <h1>Face Login</h1>
     {% csrf_token %}
-    <div>
 	    <video autoplay muted></video>
-	    <canvas width="480" height="320"></canvas>
-    </div>
+	    <canvas></canvas>
     <button id="start">开启摄像头</button>
     <button id="snap" disabled>截取图像</button>
     <p><input type="button" id="upload" value="Submit" disabled/></p>
-    <div>
-	 <h4>Media Stream Constraints options</h4>
-	 <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-    </div>
+
     <div>
 	    <span id="errorMsg"></span>
     </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block page_script %}
@@ -68,12 +70,12 @@
         success:function (displayList) {
             //处理认证后的数据 
             if (displayList.canLogin === true){
-                alert("验证成功！");
+                alert("账户验证成功！");
                 alert(displayList.AuthName);
                 window.location.href='/accounts/profile/';
             }
             else{
-                alert("验证失败！");
+                alert("验证失败,可能您还没有注册！");
             }
         },
         error:function () {
@@ -101,11 +103,7 @@
   }
 
   document.querySelector('button#start').addEventListener('click', async () => {
-    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
     const constraints = {
-      audio: {
-        echoCancellation: {exact: hasEchoCancellation}
-      },
       video: {
         width: 1280, height: 720
       }

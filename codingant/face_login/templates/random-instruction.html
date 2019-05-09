@@ -26,6 +26,9 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/main.css">
+    <link href="/static/css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/main(1).css">
 
 </head>
 
@@ -33,12 +36,7 @@
 {% csrf_token %}
 <div id="container">
 
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
-        <span>MediaRecorder</span></h1>
-
-    <p>For more information see the MediaStream Recording API <a
-            href="http://w3c.github.io/mediacapture-record/MediaRecorder.html"
-            title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>
+    <h1><a href="/accounts/login/" target="_self" title="homepage">返回登录界面</a></h1>
 
     <video id="gum" playsinline autoplay muted></video>
     <video id="recorded" playsinline loop></video>
@@ -50,16 +48,8 @@
     </div>
 
     <div>
-        <h4>Media Stream Constraints options</h4>
-        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-    </div>
-
-    <div>
         <span id="errorMsg"></span>
     </div>
-
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
 
 </div>
 
@@ -135,13 +125,13 @@ function handleDataAvailable(event) {
 
                 success:function (displayList) {
                     if (displayList.canLogin === true){
-                        alert("验证成功！");
+                        alert("账户验证成功！");
                         alert('Blinks:' + displayList.blink_num);
                         alert(displayList.AuthName);
                         window.location.href='/accounts/profile/';
                     }
                     else{
-                        alert("验证失败！");
+                        alert("验证失败,可能您还没有注册！");
                         alert(displayList.blink_num);
                     }
                 },
@@ -169,13 +159,13 @@ function handleDataAvailable(event) {
 
                 success:function (displayList) {
                     if (displayList.canLogin === true){
-                        alert("验证成功！");
+                        alert("账户验证成功！");
                         alert('mouth_open:' + displayList.open_num);
                         alert(displayList.AuthName);
                         window.location.href='/accounts/profile/';
                     }
                     else{
-                        alert("验证失败！");
+                        alert("验证失败,可能您还没有注册！");
                         alert(displayList.blink_num);
                     }
                 },
@@ -266,11 +256,7 @@ async function init(constraints) {
 }
 
 document.querySelector('button#start').addEventListener('click', async () => {
-  const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
   const constraints = {
-    audio: {
-      echoCancellation: {exact: hasEchoCancellation}
-    },
     video: {
       width: 1280, height: 720
     }

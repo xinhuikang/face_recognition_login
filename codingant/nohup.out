@@ -934,3 +934,1450 @@ piece_time: 2.4737839999999998
 [08/May/2019 19:24:47] "GET /accounts/login/ HTTP/1.1" 200 2776
 [08/May/2019 19:24:49] "GET /temp.webm HTTP/1.1" 200 1386982
 [08/May/2019 19:25:32] "GET /accounts/login/ HTTP/1.1" 200 2776
+[09/May/2019 10:20:26] "GET /accounts/login/ HTTP/1.1" 200 2776
+[09/May/2019 10:21:42] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:21:46] "GET /temp.webm HTTP/1.1" 200 1386982
+[09/May/2019 10:32:32] "GET /face/action_detect/ HTTP/1.1" 200 9635
+[09/May/2019 10:32:33] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 10:32:39] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:47:35] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:57:09] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:57:13] "GET /face/login/ HTTP/1.1" 200 4635
+[09/May/2019 10:57:32] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:57:35] "GET /face/register/ HTTP/1.1" 200 5297
+[09/May/2019 10:57:46] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 10:57:48] "GET /face/action_detect/ HTTP/1.1" 200 9635
+[09/May/2019 10:57:48] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:23:08] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:23:10] "GET /face/login/ HTTP/1.1" 200 4857
+[09/May/2019 15:23:11] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:23:11] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:23:11] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:23:22] "POST /face/login/loginFaceCheck/ HTTP/1.1" 200 38
+[09/May/2019 15:23:25] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:23:26] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:23:26] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:23:26] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:23:26] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:23:26] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:23:26] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:23:27] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:23:27] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:23:27] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:23:27] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:23:27] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:23:27] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:23:27] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:23:27] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:23:28] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:23:28] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:23:28] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:23:29] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:23:30] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:23:32] "GET /face/register/ HTTP/1.1" 200 5442
+[09/May/2019 15:23:32] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:23:33] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:23:33] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:23:41] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:23:48] "GET /face/action_detect/ HTTP/1.1" 200 9829
+[09/May/2019 15:23:48] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:23:48] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:23:48] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 50 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:1 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x559f63780100] using SAR=1/1
+[libx264 @ 0x559f63780100] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x559f63780100] profile High, level 3.1
+[libx264 @ 0x559f63780100] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=    2 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=   10 fps=9.2 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=0 speed=   0x    frame=   16 fps= 10 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=1 speed=   0x    frame=   26 fps= 12 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=2 speed=   0x    frame=   35 fps= 13 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=6 speed=   0x    frame=   45 fps= 14 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=8 speed=   0x    frame=   49 fps= 13 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=1 drop=9 speed=   0x    frame=   56 fps= 13 q=28.0 size=       0kB time=00:00:00.15 bitrate=   2.6kbits/s dup=1 drop=10 speed=0.0343x    frame=   58 fps=8.6 q=28.0 size=       0kB time=00:00:00.25 bitrate=   1.5kbits/s dup=1 drop=11 speed=0.0372x    frame=   79 fps=9.8 q=-1.0 Lsize=     584kB time=00:00:03.80 bitrate=1259.6kbits/s dup=1 drop=18 speed=0.471x    
+video:583kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.301904%
+[libx264 @ 0x559f63780100] frame I:1     Avg QP:21.56  size: 49350
+[libx264 @ 0x559f63780100] frame P:20    Avg QP:22.44  size: 16842
+[libx264 @ 0x559f63780100] frame B:58    Avg QP:24.65  size:  3615
+[libx264 @ 0x559f63780100] consecutive B-frames:  1.3%  2.5%  0.0% 96.2%
+[libx264 @ 0x559f63780100] mb I  I16..4:  7.8% 82.1% 10.2%
+[libx264 @ 0x559f63780100] mb P  I16..4:  1.5%  3.1%  0.1%  P16..4: 55.8% 13.2%  9.3%  0.0%  0.0%    skip:17.1%
+[libx264 @ 0x559f63780100] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8: 39.9%  0.9%  0.1%  direct: 3.2%  skip:55.8%  L0:51.7% L1:46.1% BI: 2.2%
+[libx264 @ 0x559f63780100] 8x8 transform intra:74.3% inter:90.0%
+[libx264 @ 0x559f63780100] coded y,uvDC,uvAC intra: 55.4% 84.8% 52.6% inter: 10.7% 29.2% 2.2%
+[libx264 @ 0x559f63780100] i16 v,h,dc,p: 17% 26% 10% 47%
+[libx264 @ 0x559f63780100] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 24% 25%  4%  6%  5%  7%  5%  7%
+[libx264 @ 0x559f63780100] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 41%  8%  3%  6%  5%  5%  4%  4%
+[libx264 @ 0x559f63780100] i8c dc,h,v,p: 54% 27% 14%  5%
+[libx264 @ 0x559f63780100] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x559f63780100] ref P L0: 49.7%  7.5% 32.4% 10.4%
+[libx264 @ 0x559f63780100] ref B L0: 80.6% 15.5%  3.9%
+[libx264 @ 0x559f63780100] ref B L1: 94.6%  5.4%
+[libx264 @ 0x559f63780100] kb/s:1206.80
+20.0
+79.0
+trans_time: 1.896147
+piece_time: 6.808134
+piece_time: 6.699967
+piece_time: 7.057635
+piece_time: 7.147409
+piece_time: 7.028159
+piece_time: 7.001092
+piece_time: 7.132934
+piece_time: 7.621843999999999
+piece_time: 7.33485
+piece_time: 7.56002
+piece_time: 7.543519
+piece_time: 7.407374
+piece_time: 7.425099
+piece_time: 7.344253
+piece_time: 7.869248
+piece_time: 7.4831579999999995
+piece_time: 7.787323
+piece_time: 8.31153
+piece_time: 8.009583000000001
+piece_time: 7.984577000000001
+dict: {0: 0.022982158529758108, 16: 0.30689880941356346, 12: 0.041764924509418065, 4: 0.03654640714595846, 24: 0.7921317774246717, 40: 0.018479989930643242, 44: 0.015314097295792221, 48: 0.018909747946890734, 68: 0.45424921464182766, 52: 0.5130189982304348, 36: 0.1428007848320688, 72: 0.09947014715176107, 76: 0.020206145003572963, 64: 0.5510005734786083, 28: 0.7018176521759424, 32: 0.463717906943365, 56: 0.6939914880855347, 20: 0.6774917022171478, 5: 0.03392023706258119, 60: 0.6503555964192635, 8: 0.022717230124815867, 1: 0.026499947000158997, 17: 0.41927794053146783, 13: 0.07989601010321355, 25: 0.7799200272709715, 45: 0.023361610618446407, 69: 0.2691837894404947, 73: 0.05005346532454895, 49: 0.03711092519042322, 77: 0.02423503690895933, 6: 0.020006674385952845, 37: 0.10982002114142585, 65: 0.522379992451242, 53: 0.6558602295759534, 29: 0.6136312053904361, 41: 0.018280636157882932, 61: 0.6936410822398681, 33: 0.3965475383659186, 14: 0.11509811171527781, 2: 0.030158826150037024, 46: 0.02147887945652324, 18: 0.5648709079923993, 26: 0.767030450621236, 21: 0.7447269963625007, 70: 0.1888717020896387, 50: 0.15668218176561807, 9: 0.02983786758212829, 7: 0.02325331069305592, 78: 0.01998541281760737, 66: 0.48773126718810283, 57: 0.710539810805479, 74: 0.04261305992350248, 54: 0.6820096158874749, 30: 0.5492923587239795, 42: 0.012458227519213013, 62: 0.6978440244887072, 38: 0.038905224685284664, 47: 0.019967443013748122, 19: 0.6172236589009595, 3: 0.020006674385952845, 15: 0.3404459805271098, 34: 0.24414471247221417, 27: 0.74920987588285, 71: 0.13132618092011594, 22: 0.8385254637113555, 51: 0.4866140770117261, 10: 0.02694058322854465, 67: 0.4795681202167188, 58: 0.7268496021583867, 43: 0.019106047403905643, 55: 0.6642653799993755, 31: 0.5034910963070028, 75: 0.021978377598085977, 63: 0.6607222062969803, 39: 0.025699172068106627, 35: 0.20784648463787578, 23: 0.8364496745755572, 59: 0.7028924682282701, 11: 0.03381770529991505}
+0 0.022982158529758108
+1 0.026499947000158997
+2 0.030158826150037024
+3 0.020006674385952845
+4 0.03654640714595846
+5 0.03392023706258119
+6 0.020006674385952845
+7 0.02325331069305592
+8 0.022717230124815867
+9 0.02983786758212829
+10 0.02694058322854465
+11 0.03381770529991505
+12 0.041764924509418065
+13 0.07989601010321355
+14 0.11509811171527781
+15 0.3404459805271098
+16 0.30689880941356346
+17 0.41927794053146783
+18 0.5648709079923993
+19 0.6172236589009595
+20 0.6774917022171478
+21 0.7447269963625007
+22 0.8385254637113555
+23 0.8364496745755572
+24 0.7921317774246717
+25 0.7799200272709715
+26 0.767030450621236
+27 0.74920987588285
+28 0.7018176521759424
+29 0.6136312053904361
+30 0.5492923587239795
+31 0.5034910963070028
+32 0.463717906943365
+33 0.3965475383659186
+34 0.24414471247221417
+35 0.20784648463787578
+36 0.1428007848320688
+37 0.10982002114142585
+38 0.038905224685284664
+39 0.025699172068106627
+40 0.018479989930643242
+41 0.018280636157882932
+42 0.012458227519213013
+43 0.019106047403905643
+44 0.015314097295792221
+45 0.023361610618446407
+46 0.02147887945652324
+47 0.019967443013748122
+48 0.018909747946890734
+49 0.03711092519042322
+50 0.15668218176561807
+51 0.4866140770117261
+52 0.5130189982304348
+53 0.6558602295759534
+54 0.6820096158874749
+55 0.6642653799993755
+56 0.6939914880855347
+57 0.710539810805479
+58 0.7268496021583867
+59 0.7028924682282701
+60 0.6503555964192635
+61 0.6936410822398681
+62 0.6978440244887072
+63 0.6607222062969803
+64 0.5510005734786083
+65 0.522379992451242
+66 0.48773126718810283
+67 0.4795681202167188
+68 0.45424921464182766
+69 0.2691837894404947
+70 0.1888717020896387
+71 0.13132618092011594
+72 0.09947014715176107
+73 0.05005346532454895
+74 0.04261305992350248
+75 0.021978377598085977
+76 0.020206145003572963
+77 0.02423503690895933
+78 0.01998541281760737
+time: 0.18751600000000046
+2
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:25:01] "POST /face/action_detect/month_open_detect/ HTTP/1.1" 200 53
+[09/May/2019 15:25:01] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:25:01] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:25:01] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:25:05] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:25:06] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:25:06] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:25:06] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:25:06] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:25:06] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:25:07] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:25:07] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:25:07] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:25:08] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:25:08] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:25:08] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:25:08] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:25:08] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:25:08] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:25:08] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:25:08] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:25:09] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:25:09] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css.map HTTP/1.1" 200 542194
+[09/May/2019 15:25:11] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:25:12] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:25:46] "GET /face/action_detect/ HTTP/1.1" 200 9817
+[09/May/2019 15:25:46] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:25:46] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:25:47] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 16.67 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:1 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55e7bd9e55a0] using SAR=1/1
+[libx264 @ 0x55e7bd9e55a0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55e7bd9e55a0] profile High, level 3.1
+[libx264 @ 0x55e7bd9e55a0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+Past duration 0.820000 too large
+Past duration 0.999992 too large
+Past duration 0.799995 too large
+    Last message repeated 2 times
+Past duration 0.999992 too large
+    Last message repeated 1 times
+Past duration 0.799995 too large
+frame=   46 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A dup=3 drop=12 speed=   0x    Past duration 0.999992 too large
+    Last message repeated 1 times
+frame=   61 fps= 41 q=-1.0 Lsize=     452kB time=00:00:02.90 bitrate=1275.7kbits/s dup=3 drop=18 speed=1.95x    
+video:450kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.343904%
+[libx264 @ 0x55e7bd9e55a0] frame I:1     Avg QP:20.59  size: 60983
+[libx264 @ 0x55e7bd9e55a0] frame P:15    Avg QP:22.52  size: 16539
+[libx264 @ 0x55e7bd9e55a0] frame B:45    Avg QP:24.92  size:  3358
+[libx264 @ 0x55e7bd9e55a0] consecutive B-frames:  1.6%  0.0%  0.0% 98.4%
+[libx264 @ 0x55e7bd9e55a0] mb I  I16..4:  5.3% 81.4% 13.3%
+[libx264 @ 0x55e7bd9e55a0] mb P  I16..4:  1.3%  2.5%  0.0%  P16..4: 55.1% 12.8%  9.0%  0.0%  0.0%    skip:19.2%
+[libx264 @ 0x55e7bd9e55a0] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8: 39.2%  0.9%  0.1%  direct: 2.5%  skip:57.1%  L0:47.5% L1:50.5% BI: 2.0%
+[libx264 @ 0x55e7bd9e55a0] 8x8 transform intra:74.8% inter:89.5%
+[libx264 @ 0x55e7bd9e55a0] coded y,uvDC,uvAC intra: 63.0% 86.5% 59.2% inter: 10.3% 26.6% 2.1%
+[libx264 @ 0x55e7bd9e55a0] i16 v,h,dc,p: 15% 31% 10% 44%
+[libx264 @ 0x55e7bd9e55a0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 25% 25%  4%  6%  5%  6%  4%  7%
+[libx264 @ 0x55e7bd9e55a0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 44%  6%  3%  5%  5%  4%  4%  4%
+[libx264 @ 0x55e7bd9e55a0] i8c dc,h,v,p: 51% 29% 15%  5%
+[libx264 @ 0x55e7bd9e55a0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55e7bd9e55a0] ref P L0: 49.9%  7.2% 33.2%  9.7%
+[libx264 @ 0x55e7bd9e55a0] ref B L0: 77.8% 17.5%  4.7%
+[libx264 @ 0x55e7bd9e55a0] ref B L1: 91.5%  8.5%
+[libx264 @ 0x55e7bd9e55a0] kb/s:1207.07
+20.0
+61.0
+piece_time: 0.67415
+piece_time: 1.9942749999999998
+piece_time: 2.0169520000000003
+piece_time: 2.0462559999999996
+piece_time: 2.240272
+piece_time: 2.218314
+piece_time: 2.232573
+piece_time: 2.3397639999999997
+piece_time: 2.375267
+piece_time: 2.362652
+piece_time: 2.4183689999999998
+piece_time: 2.370166
+piece_time: 2.318568
+piece_time: 2.3945079999999996
+piece_time: 2.4073919999999998
+piece_time: 2.403438
+piece_time: 2.41424
+piece_time: 2.432411
+piece_time: 2.483907
+piece_time: 2.528244
+piece_time: 2.679304
+0 : (0.2913997136296607, 0.3026069751515477)
+1 : (0.29250491169350623, 0.3026069751515477)
+2 : (0.297555584458932, 0.31357362279453244)
+3 : (0.297555584458932, 0.3026069751515477)
+4 : (0.297555584458932, 0.3013371091966953)
+5 : (0.2701716134791496, 0.30694729298941925)
+6 : (0.27069514600185485, 0.3094529348109021)
+7 : (0.28215262787960327, 0.3082458874661286)
+8 : (0.2918403225853603, 0.31185711231887703)
+9 : (0.2918403225853603, 0.3239989843947973)
+10 : (0.2918403225853603, 0.301426631051435)
+11 : (0.30221203851697753, 0.32289832886317227)
+12 : (0.2918403225853603, 0.3305417746070982)
+13 : (0.29146949565476804, 0.3239989843947973)
+14 : (0.3125837544485948, 0.334239247239279)
+15 : (0.2547665563010375, 0.2744437330796498)
+16 : (0.21318704475910547, 0.20112697267631702)
+17 : (0.31833190467625583, 0.3217200106095204)
+18 : (0.3314046768364319, 0.3492151478847891)
+19 : (0.19697204023073853, 0.20560740263799082)
+20 : (0.21719626528856628, 0.2219142874672349)
+21 : (0.2780494572177131, 0.2793580215387817)
+22 : (0.2840024290116771, 0.296406690641617)
+23 : (0.2772206778016374, 0.3076926960929225)
+24 : (0.3081304151352917, 0.31185711231887703)
+25 : (0.301755770755514, 0.3232869847894067)
+26 : (0.3086162613444362, 0.34138814342345)
+27 : (0.301755770755514, 0.3200921998322399)
+28 : (0.30221203851697753, 0.3130354305725289)
+29 : (0.316392422272313, 0.33386188268544065)
+30 : (0.2918403225853603, 0.3232869847894067)
+31 : (0.3125837544485948, 0.3232869847894067)
+32 : (0.30588944036240756, 0.3451787082514736)
+33 : (0.32295854389096407, 0.33422644580160127)
+34 : (0.30221203851697753, 0.3232869847894067)
+35 : (0.28590687048270036, 0.3130354305725289)
+36 : (0.21823739664048053, 0.23537722673520156)
+37 : (0.3599896871281315, 0.4132425434832237)
+38 : (0.4061618667957955, 0.41199999341360205)
+39 : (0.2605135626795603, 0.28622768956597944)
+40 : (0.19814381135151637, 0.20576656204975224)
+41 : (0.27886064553313694, 0.2977029546046325)
+42 : (0.2918441016027214, 0.3130354305725289)
+43 : (0.30221203851697753, 0.3232869847894067)
+44 : (0.301755770755514, 0.3130354305725289)
+45 : (0.3125837544485948, 0.3232869847894067)
+46 : (0.3129221585256635, 0.33514301359994547)
+47 : (0.30221203851697753, 0.3232869847894067)
+48 : (0.30622856432729867, 0.33252543342439767)
+49 : (0.30588944036240756, 0.3232869847894067)
+50 : (0.3121118278813673, 0.33422644580160127)
+51 : (0.30654672396046573, 0.3360409748122425)
+52 : (0.29146949565476804, 0.3305417746070982)
+53 : (0.2918403225853603, 0.33130290545278457)
+54 : (0.29606771740499954, 0.3243580412766781)
+55 : (0.30622856432729867, 0.3451787082514736)
+56 : (0.30724145926746743, 0.3377634065029129)
+57 : (0.29606771740499954, 0.3270464260358333)
+58 : (0.29016781941260544, 0.316341971999541)
+59 : (0.30012618576429956, 0.3360409748122425)
+60 : (0.30724145926746743, 0.3369526938665577)
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:26:18] "POST /face/action_detect/eye_blink_detect/ HTTP/1.1" 200 54
+[09/May/2019 15:26:24] "GET /accounts/profile/ HTTP/1.1" 302 0
+[09/May/2019 15:26:24] "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 2710
+[09/May/2019 15:26:27] "GET /face/action_detect/ HTTP/1.1" 200 9817
+[09/May/2019 15:26:28] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:26:28] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:26:28] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 1k tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:1 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55a8443405a0] using SAR=1/1
+[libx264 @ 0x55a8443405a0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55a8443405a0] profile High, level 3.1
+[libx264 @ 0x55a8443405a0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   53 fps=0.0 q=28.0 size=       0kB time=00:00:00.00 bitrate=3918.4kbits/s dup=2 drop=21 speed=0.000194x    frame=   59 fps= 46 q=-1.0 Lsize=     453kB time=00:00:02.80 bitrate=1325.2kbits/s dup=2 drop=23 speed=2.18x    
+video:451kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.337668%
+[libx264 @ 0x55a8443405a0] frame I:1     Avg QP:20.87  size: 58900
+[libx264 @ 0x55a8443405a0] frame P:15    Avg QP:22.53  size: 17589
+[libx264 @ 0x55a8443405a0] frame B:43    Avg QP:24.72  size:  3229
+[libx264 @ 0x55a8443405a0] consecutive B-frames:  1.7%  3.4%  0.0% 94.9%
+[libx264 @ 0x55a8443405a0] mb I  I16..4:  3.7% 85.0% 11.3%
+[libx264 @ 0x55a8443405a0] mb P  I16..4:  1.3%  4.0%  0.1%  P16..4: 52.5% 13.1%  9.8%  0.0%  0.0%    skip:19.3%
+[libx264 @ 0x55a8443405a0] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8: 37.6%  0.9%  0.1%  direct: 3.0%  skip:58.3%  L0:53.8% L1:43.7% BI: 2.4%
+[libx264 @ 0x55a8443405a0] 8x8 transform intra:79.7% inter:89.4%
+[libx264 @ 0x55a8443405a0] coded y,uvDC,uvAC intra: 64.5% 86.8% 56.4% inter: 10.3% 27.1% 2.1%
+[libx264 @ 0x55a8443405a0] i16 v,h,dc,p: 13% 29% 11% 48%
+[libx264 @ 0x55a8443405a0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 27% 26%  4%  6%  5%  6%  4%  7%
+[libx264 @ 0x55a8443405a0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 41%  7%  4%  5%  5%  5%  4%  5%
+[libx264 @ 0x55a8443405a0] i8c dc,h,v,p: 54% 27% 14%  4%
+[libx264 @ 0x55a8443405a0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55a8443405a0] ref P L0: 52.9%  7.7% 30.9%  8.6%
+[libx264 @ 0x55a8443405a0] ref B L0: 78.3% 17.8%  3.9%
+[libx264 @ 0x55a8443405a0] ref B L1: 93.6%  6.4%
+[libx264 @ 0x55a8443405a0] kb/s:1251.79
+20.0
+59.0
+piece_time: 1.337963
+piece_time: 1.986211
+piece_time: 1.927156
+piece_time: 1.9517740000000001
+piece_time: 1.958581
+piece_time: 1.93095
+piece_time: 1.954583
+piece_time: 1.9690779999999999
+piece_time: 1.958196
+piece_time: 1.9546189999999999
+piece_time: 1.960938
+piece_time: 1.981629
+piece_time: 1.961855
+piece_time: 1.9749480000000001
+piece_time: 1.956787
+piece_time: 1.988728
+piece_time: 1.9903739999999999
+piece_time: 1.9646789999999998
+piece_time: 1.976114
+piece_time: 1.9664009999999998
+0 : (0.2999400179940021, 0.32211784904875407)
+1 : (0.30605871993778966, 0.3255466247281057)
+2 : (0.2999400179940021, 0.31629443938557433)
+3 : (0.3332610189093707, 0.3333333333333333)
+4 : (0.3299340197934023, 0.34600353548996643)
+5 : (0.33698309236574414, 0.33492826600521397)
+6 : (0.33675415990152485, 0.3281950036115659)
+7 : (0.33024615279185804, 0.34573351679629094)
+8 : (0.3299340197934023, 0.337351183859022)
+9 : (0.3297363163781905, 0.345820526768863)
+10 : (0.3040285309634956, 0.31034610925275036)
+11 : (0.314098598277184, 0.33004971852118925)
+12 : (0.31409621128313286, 0.32920700942904607)
+13 : (0.31707325733493624, 0.33990627767448434)
+14 : (0.3044955489514715, 0.3281950036115659)
+15 : (0.3039939807491462, 0.33004971852118925)
+16 : (0.3173556097823762, 0.34279423337525855)
+17 : (0.31155982620457257, 0.33004971852118925)
+18 : (0.284498069017863, 0.2982880811954947)
+19 : (0.15514002765186719, 0.18173274864003813)
+20 : (0.18144754320281925, 0.19478945098782635)
+21 : (0.314871023883804, 0.346462308647934)
+22 : (0.3864096239685012, 0.4001923646744735)
+23 : (0.38454428462686413, 0.39913154935541206)
+24 : (0.24059336989821364, 0.24028063430164298)
+25 : (0.16368590354887025, 0.1838073601403464)
+26 : (0.1841910828067397, 0.20480848353956402)
+27 : (0.2605597317351953, 0.2730731871078546)
+28 : (0.29454411894288224, 0.3072361702394105)
+29 : (0.3037229851928832, 0.31102137603900465)
+30 : (0.30823569252144933, 0.33004971852118925)
+31 : (0.307764942925903, 0.3217252189614598)
+32 : (0.31753154379373666, 0.3347493882335902)
+33 : (0.30823569252144933, 0.3217252189614598)
+34 : (0.3080649090421709, 0.33230325054509124)
+35 : (0.3332692738855748, 0.3404786930062755)
+36 : (0.30763542770149127, 0.3208898518646281)
+37 : (0.3080649090421709, 0.3413502555248714)
+38 : (0.3039939807491462, 0.3266321348210294)
+39 : (0.31379037242298485, 0.3291234045955718)
+40 : (0.29864205129585064, 0.31034610925275036)
+41 : (0.30763542770149127, 0.31034610925275036)
+42 : (0.27070517771464847, 0.28874390411133427)
+43 : (0.18970628719322796, 0.2134034383564249)
+44 : (0.26065895024104324, 0.28261670947211076)
+45 : (0.41300359645060414, 0.4272294357182904)
+46 : (0.4117647058823529, 0.41755362138751007)
+47 : (0.38461538461538464, 0.39010158826634284)
+48 : (0.18818115151680465, 0.19478945098782635)
+49 : (0.23136965870696222, 0.2400207871029932)
+50 : (0.22020369237759152, 0.2400207871029932)
+51 : (0.26522822976035576, 0.2977328989284341)
+52 : (0.28444478454314326, 0.28604328520069694)
+53 : (0.28013267190946706, 0.2967214718007705)
+54 : (0.28444478454314326, 0.2950897866823475)
+55 : (0.28904841007025184, 0.3072361702394105)
+56 : (0.3039939807491462, 0.3281950036115659)
+57 : (0.2887283117702, 0.3165870638796369)
+58 : (0.2888882576467999, 0.3173039886685755)
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:26:55] "POST /face/action_detect/eye_blink_detect/ HTTP/1.1" 200 54
+[09/May/2019 15:26:59] "GET /accounts/profile/ HTTP/1.1" 302 0
+[09/May/2019 15:27:00] "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 2710
+[09/May/2019 15:27:26] "GET /face/action_detect/ HTTP/1.1" 200 9817
+[09/May/2019 15:27:27] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:27:27] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:27:27] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:31:41] "GET /face/action_detect/ HTTP/1.1" 200 9193
+[09/May/2019 15:31:42] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:31:42] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:31:42] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:31:42] "GET /static/images/webrtc-icon-192x192.png HTTP/1.1" 200 31806
+[09/May/2019 15:31:44] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:32:35] "GET /face/action_detect/ HTTP/1.1" 200 9208
+[09/May/2019 15:32:36] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:32:36] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:32:36] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:32:36] "GET /static/images/webrtc-icon-192x192.png HTTP/1.1" 200 31806
+[09/May/2019 15:32:38] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:32:42] "GET /temp.webm HTTP/1.1" 200 1011293
+[09/May/2019 15:32:46] "GET /face/login/ HTTP/1.1" 200 4719
+[09/May/2019 15:32:46] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:32:46] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:32:47] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:33:55] "GET /face/login/ HTTP/1.1" 200 4719
+[09/May/2019 15:33:56] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:33:56] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:33:56] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:33:59] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:33:59] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:33:59] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:35:45] "GET /face/login/ HTTP/1.1" 200 4634
+[09/May/2019 15:37:01] "GET /face/login/ HTTP/1.1" 200 4555
+[09/May/2019 15:37:01] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:37:01] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:37:01] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:37:15] "POST /face/login/loginFaceCheck/ HTTP/1.1" 200 38
+[09/May/2019 15:37:18] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:37:19] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:37:19] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:37:19] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:37:19] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:37:19] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:37:19] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:37:20] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:37:20] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:37:21] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:37:21] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:37:21] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:37:21] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:37:21] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:37:21] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:37:22] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:37:22] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:37:22] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:37:24] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:37:25] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:37:31] "GET /face/action_detect/ HTTP/1.1" 200 9040
+[09/May/2019 15:37:32] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:37:32] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:37:32] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 1k tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55656ceefcc0] using SAR=1/1
+[libx264 @ 0x55656ceefcc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55656ceefcc0] profile High, level 3.1
+[libx264 @ 0x55656ceefcc0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   52 fps=0.0 q=28.0 size=       0kB time=-00:00:00.04 bitrate=N/A dup=0 drop=21 speed=N/A    frame=   60 fps= 43 q=-1.0 Lsize=     477kB time=00:00:02.85 bitrate=1370.2kbits/s dup=0 drop=25 speed=2.04x    
+video:475kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.321639%
+[libx264 @ 0x55656ceefcc0] frame I:1     Avg QP:21.62  size: 56655
+[libx264 @ 0x55656ceefcc0] frame P:15    Avg QP:22.54  size: 18086
+[libx264 @ 0x55656ceefcc0] frame B:44    Avg QP:24.89  size:  3589
+[libx264 @ 0x55656ceefcc0] consecutive B-frames:  1.7%  0.0%  5.0% 93.3%
+[libx264 @ 0x55656ceefcc0] mb I  I16..4:  8.2% 78.8% 13.1%
+[libx264 @ 0x55656ceefcc0] mb P  I16..4:  1.2%  3.5%  0.1%  P16..4: 53.1% 13.6% 10.4%  0.0%  0.0%    skip:18.3%
+[libx264 @ 0x55656ceefcc0] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8: 40.0%  1.0%  0.1%  direct: 2.9%  skip:55.8%  L0:55.0% L1:42.7% BI: 2.3%
+[libx264 @ 0x55656ceefcc0] 8x8 transform intra:76.4% inter:88.5%
+[libx264 @ 0x55656ceefcc0] coded y,uvDC,uvAC intra: 62.0% 86.3% 56.6% inter: 10.9% 28.8% 2.4%
+[libx264 @ 0x55656ceefcc0] i16 v,h,dc,p: 13% 34% 11% 42%
+[libx264 @ 0x55656ceefcc0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 25% 26%  4%  6%  5%  6%  4%  7%
+[libx264 @ 0x55656ceefcc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 43%  8%  3%  5%  5%  5%  4%  4%
+[libx264 @ 0x55656ceefcc0] i8c dc,h,v,p: 54% 26% 15%  5%
+[libx264 @ 0x55656ceefcc0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55656ceefcc0] ref P L0: 50.8%  7.5% 30.7% 11.1%
+[libx264 @ 0x55656ceefcc0] ref B L0: 81.3% 15.3%  3.4%
+[libx264 @ 0x55656ceefcc0] ref B L1: 92.3%  7.7%
+[libx264 @ 0x55656ceefcc0] kb/s:1295.68
+20.0
+60.0
+piece_time: 1.9936140000000002
+piece_time: 2.0284679999999997
+piece_time: 2.0290079999999997
+piece_time: 1.970277
+piece_time: 1.974217
+piece_time: 2.0098670000000003
+piece_time: 1.989557
+piece_time: 2.011623
+piece_time: 2.00311
+piece_time: 2.021856
+piece_time: 1.980704
+piece_time: 2.006585
+piece_time: 1.999514
+piece_time: 2.0066949999999997
+piece_time: 2.036239
+piece_time: 2.012341
+piece_time: 2.002349
+piece_time: 2.035599
+piece_time: 2.041385
+piece_time: 2.041052
+0 : (0.30397615192328215, 0.3088975772184362)
+1 : (0.30397615192328215, 0.31234752377721214)
+2 : (0.30358990460011454, 0.32545605979159037)
+3 : (0.30397615192328215, 0.31846487764924103)
+4 : (0.30358990460011454, 0.32573117099222815)
+5 : (0.30823757616204966, 0.34358197323500017)
+6 : (0.31403235932255225, 0.3224231045053326)
+7 : (0.3073993852018444, 0.3224231045053326)
+8 : (0.30358990460011454, 0.32134048312838925)
+9 : (0.31870524581165144, 0.3417267249031067)
+10 : (0.3192077659391892, 0.3242327847719448)
+11 : (0.3143929158831502, 0.31935682431108975)
+12 : (0.3255821744893534, 0.3417267249031067)
+13 : (0.3040895239183026, 0.3371393723521582)
+14 : (0.3040895239183026, 0.32961858897266455)
+15 : (0.3255821744893534, 0.3305417746070982)
+16 : (0.33239272035902223, 0.3495690287622707)
+17 : (0.3261179865883981, 0.34077230029608807)
+18 : (0.3044764068904866, 0.33146865569442613)
+19 : (0.30358990460011454, 0.33252543342439767)
+20 : (0.3188542685329393, 0.3529247639101571)
+21 : (0.32928321018893386, 0.3529247639101571)
+22 : (0.32944891176969393, 0.3631058272528683)
+23 : (0.3333333333333333, 0.3561309707013459)
+24 : (0.3404495554925702, 0.35857824811246997)
+25 : (0.3430805738534929, 0.3670938094639475)
+26 : (0.3404495554925702, 0.3759208756605986)
+27 : (0.3404495554925702, 0.3658650569820556)
+28 : (0.2039170176846942, 0.2173124391908652)
+29 : (0.1971325268819119, 0.20372372629485402)
+30 : (0.39121191736588024, 0.4191970989698422)
+31 : (0.3663050623709432, 0.3529247639101571)
+32 : (0.18508626894543276, 0.1917412472118426)
+33 : (0.20181283641337464, 0.2235196939276642)
+34 : (0.2875460779767682, 0.29243051857521996)
+35 : (0.3102840300292527, 0.31526054020711447)
+36 : (0.32944891176969393, 0.3537891304962398)
+37 : (0.32944891176969393, 0.344256329391295)
+38 : (0.3188542685329393, 0.3519390637744782)
+39 : (0.33624220961891704, 0.3360409748122425)
+40 : (0.34006560414058357, 0.35857824811246997)
+41 : (0.32944891176969393, 0.3519390637744782)
+42 : (0.33624220961891704, 0.3547800122420505)
+43 : (0.337000063705122, 0.3519390637744782)
+44 : (0.329842950365095, 0.3451787082514736)
+45 : (0.33017477285915603, 0.3547800122420505)
+46 : (0.3261179865883981, 0.34077230029608807)
+47 : (0.31566879050038577, 0.3417267249031067)
+48 : (0.17905185335421747, 0.18729188846311487)
+49 : (0.19273496565556417, 0.20372372629485402)
+50 : (0.23904020454570996, 0.2629102756287047)
+51 : (0.1634021171502033, 0.18677043893370407)
+52 : (0.24544180689875955, 0.2693677164746814)
+53 : (0.28910059559885826, 0.2977029546046325)
+54 : (0.3261407576360453, 0.33422644580160127)
+55 : (0.3261179865883981, 0.34077230029608807)
+56 : (0.3188542685329393, 0.3529247639101571)
+57 : (0.3192077659391892, 0.3529247639101571)
+58 : (0.31956816773168073, 0.3529247639101571)
+59 : (0.3188542685329393, 0.34077230029608807)
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:38:00] "POST /face/action_detect/eye_blink_detect/ HTTP/1.1" 200 54
+[09/May/2019 15:38:06] "GET /accounts/profile/ HTTP/1.1" 302 0
+[09/May/2019 15:38:06] "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 2710
+[09/May/2019 15:38:44] "GET /temp.webm HTTP/1.1" 200 1060985
+[09/May/2019 15:39:01] "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 2710
+[09/May/2019 15:39:19] "POST /accounts/login/ HTTP/1.1" 200 2885
+[09/May/2019 15:39:31] "POST /accounts/login/ HTTP/1.1" 302 0
+[09/May/2019 15:39:32] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:39:32] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:39:32] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:39:32] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:39:33] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:39:33] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:39:33] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:39:33] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:39:33] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:39:34] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:39:34] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:39:34] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:39:34] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:39:34] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:39:34] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:39:34] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:39:34] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:39:35] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:39:37] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:39:38] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:39:45] "GET /face/action_detect/ HTTP/1.1" 200 9040
+[09/May/2019 15:39:46] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:39:46] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:39:46] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:40:27] "GET /face/action_detect/ HTTP/1.1" 200 9052
+[09/May/2019 15:40:27] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:40:27] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:40:27] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 720x1280, SAR 1:1 DAR 9:16, 24.42 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55a5554814e0] using SAR=1/1
+[libx264 @ 0x55a5554814e0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55a5554814e0] profile High, level 3.1
+[libx264 @ 0x55a5554814e0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 720x1280 [SAR 1:1 DAR 9:16], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   64 fps=0.0 q=28.0 size=       0kB time=00:00:00.55 bitrate=   0.7kbits/s dup=41 drop=0 speed=1.07x    frame=   72 fps= 55 q=-1.0 Lsize=     684kB time=00:00:03.45 bitrate=1623.6kbits/s dup=48 drop=0 speed=2.63x    
+video:682kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.244668%
+[libx264 @ 0x55a5554814e0] frame I:1     Avg QP:20.91  size: 54296
+[libx264 @ 0x55a5554814e0] frame P:18    Avg QP:21.15  size: 29628
+[libx264 @ 0x55a5554814e0] frame B:53    Avg QP:22.59  size:  2079
+[libx264 @ 0x55a5554814e0] consecutive B-frames:  1.4%  0.0%  4.2% 94.4%
+[libx264 @ 0x55a5554814e0] mb I  I16..4:  9.7% 71.0% 19.3%
+[libx264 @ 0x55a5554814e0] mb P  I16..4:  3.1%  9.8%  0.8%  P16..4: 41.4% 15.8%  8.4%  0.0%  0.0%    skip:20.7%
+[libx264 @ 0x55a5554814e0] mb B  I16..4:  0.1%  0.2%  0.0%  B16..8: 13.9%  0.9%  0.2%  direct: 0.9%  skip:83.8%  L0:49.4% L1:44.7% BI: 6.0%
+[libx264 @ 0x55a5554814e0] 8x8 transform intra:71.0% inter:78.2%
+[libx264 @ 0x55a5554814e0] coded y,uvDC,uvAC intra: 55.5% 46.8% 7.6% inter: 9.6% 7.9% 0.0%
+[libx264 @ 0x55a5554814e0] i16 v,h,dc,p: 34% 17% 14% 35%
+[libx264 @ 0x55a5554814e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 18% 22%  5%  6%  7%  6%  6%  6%
+[libx264 @ 0x55a5554814e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 17% 12%  4%  8% 11%  6%  7%  4%
+[libx264 @ 0x55a5554814e0] i8c dc,h,v,p: 52% 20% 24%  4%
+[libx264 @ 0x55a5554814e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55a5554814e0] ref P L0: 65.1% 14.2% 12.6%  8.1%
+[libx264 @ 0x55a5554814e0] ref B L0: 89.9%  5.5%  4.7%
+[libx264 @ 0x55a5554814e0] ref B L1: 97.7%  2.3%
+[libx264 @ 0x55a5554814e0] kb/s:1550.69
+20.0
+72.0
+trans_time: 1.683008
+piece_time: 1.966258
+piece_time: 2.0602430000000003
+piece_time: 2.113303
+piece_time: 2.0817089999999996
+piece_time: 2.096038
+piece_time: 2.0976150000000002
+piece_time: 2.102686
+piece_time: 2.096077
+piece_time: 2.122871
+piece_time: 2.123258
+piece_time: 2.188587
+piece_time: 2.120823
+piece_time: 2.171596
+piece_time: 2.1171409999999997
+piece_time: 2.137782
+piece_time: 2.173778
+piece_time: 2.202108
+piece_time: 2.18415
+piece_time: 2.156917
+piece_time: 2.188945
+piece_time: 2.195444
+piece_time: 2.230989
+piece_time: 2.1982199999999996
+piece_time: 2.246416
+dict: {3: 0.04464577250497694, 0: 0.050984955654987264, 12: 0.10801858716318258, 9: 0.07754342441509025, 15: 0.3778465866711865, 6: 0.05805441574529789, 24: 0.98374195502457, 18: 0.7869807837298455, 39: 0.025476148345657056, 21: 0.9793912599606093, 30: 0.29914215520337467, 48: 0.4748467379084349, 27: 0.761345723698247, 33: 0.3096996494792218, 36: 0.0260075437902265, 66: 0.7683112059297694, 42: 0.014794745610948694, 57: 0.8264000286406664, 60: 0.8425639396931404, 63: 0.7506300943559024, 54: 0.8863296532146363, 51: 0.8275629055767909, 45: 0.027575492033354927, 69: 0.5354642655225758, 4: 0.05492437847535137, 16: 0.7646844061065247, 1: 0.0577137216736943, 10: 0.10902543363596601, 13: 0.3883769294843962, 25: 0.7594120804361861, 19: 0.9431873446551281, 7: 0.05882641696202744, 49: 0.4576135892829108, 40: 0.017257316627704196, 58: 0.8585738782417237, 46: 0.029856699277172025, 67: 0.7754684589118013, 43: 0.013609538836091074, 28: 0.4776945779960013, 31: 0.29956085924115805, 64: 0.7481718584818043, 22: 0.9793912599606093, 55: 0.8895719376274912, 61: 0.8260250227243496, 34: 0.03470403299371879, 70: 0.5367713027204397, 37: 0.02584369066635163, 52: 0.8295769877974197, 5: 0.05180971850891759, 17: 0.7803790908493003, 2: 0.051708657139528484, 14: 0.39554297403476807, 26: 0.7571435491242076, 8: 0.060598990276803606, 11: 0.11099284862712962, 50: 0.811191780233269, 41: 0.012946259387361853, 20: 0.9386494873910791, 23: 0.9809116959188663, 47: 0.4745591168290561, 32: 0.309328769425197, 68: 0.5231072628360885, 59: 0.8226229647995525, 44: 0.02729195021171315, 29: 0.4749539253498587, 62: 0.8654347703413205, 65: 0.7429371490614671, 38: 0.022490790962480686, 56: 0.809448959236894, 53: 0.8766921618973473, 71: 0.5389080754788209, 35: 0.03177956379979483}
+0 0.050984955654987264
+1 0.0577137216736943
+2 0.051708657139528484
+3 0.04464577250497694
+4 0.05492437847535137
+5 0.05180971850891759
+6 0.05805441574529789
+7 0.05882641696202744
+8 0.060598990276803606
+9 0.07754342441509025
+10 0.10902543363596601
+11 0.11099284862712962
+12 0.10801858716318258
+13 0.3883769294843962
+14 0.39554297403476807
+15 0.3778465866711865
+16 0.7646844061065247
+17 0.7803790908493003
+18 0.7869807837298455
+19 0.9431873446551281
+20 0.9386494873910791
+21 0.9793912599606093
+22 0.9793912599606093
+23 0.9809116959188663
+24 0.98374195502457
+25 0.7594120804361861
+26 0.7571435491242076
+27 0.761345723698247
+28 0.4776945779960013
+29 0.4749539253498587
+30 0.29914215520337467
+31 0.29956085924115805
+32 0.309328769425197
+33 0.3096996494792218
+34 0.03470403299371879
+35 0.03177956379979483
+36 0.0260075437902265
+37 0.02584369066635163
+38 0.022490790962480686
+39 0.025476148345657056
+40 0.017257316627704196
+41 0.012946259387361853
+42 0.014794745610948694
+43 0.013609538836091074
+44 0.02729195021171315
+45 0.027575492033354927
+46 0.029856699277172025
+47 0.4745591168290561
+48 0.4748467379084349
+49 0.4576135892829108
+50 0.811191780233269
+51 0.8275629055767909
+52 0.8295769877974197
+53 0.8766921618973473
+54 0.8863296532146363
+55 0.8895719376274912
+56 0.809448959236894
+57 0.8264000286406664
+58 0.8585738782417237
+59 0.8226229647995525
+60 0.8425639396931404
+61 0.8260250227243496
+62 0.8654347703413205
+63 0.7506300943559024
+64 0.7481718584818043
+65 0.7429371490614671
+66 0.7683112059297694
+67 0.7754684589118013
+68 0.5231072628360885
+69 0.5354642655225758
+70 0.5367713027204397
+71 0.5389080754788209
+time: 0.1656420000000005
+2
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:41:09] "POST /face/action_detect/month_open_detect/ HTTP/1.1" 200 53
+[09/May/2019 15:41:18] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:41:19] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:41:19] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:41:19] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:41:19] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:41:19] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:41:19] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:41:19] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:41:20] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:41:20] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:41:20] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:41:20] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:41:20] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:41:21] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:41:21] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:41:21] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:41:21] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:41:21] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+Not Found: /favicon.ico
+[09/May/2019 15:41:22] "GET /favicon.ico HTTP/1.1" 404 1788
+[09/May/2019 15:41:24] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:41:24] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:41:27] "GET /face/action_detect/ HTTP/1.1" 200 9052
+[09/May/2019 15:41:27] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:41:27] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:41:27] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 720x1280, SAR 1:1 DAR 9:16, 24.50 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x55a7e215e4e0] using SAR=1/1
+[libx264 @ 0x55a7e215e4e0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x55a7e215e4e0] profile High, level 3.1
+[libx264 @ 0x55a7e215e4e0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 720x1280 [SAR 1:1 DAR 9:16], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   62 fps=0.0 q=28.0 size=       0kB time=00:00:00.45 bitrate=   0.9kbits/s dup=41 drop=0 speed=0.791x    frame=   69 fps= 52 q=-1.0 Lsize=     614kB time=00:00:03.30 bitrate=1523.8kbits/s dup=46 drop=0 speed=2.49x    
+video:612kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.266870%
+[libx264 @ 0x55a7e215e4e0] frame I:1     Avg QP:22.23  size: 37729
+[libx264 @ 0x55a7e215e4e0] frame P:18    Avg QP:21.40  size: 27263
+[libx264 @ 0x55a7e215e4e0] frame B:50    Avg QP:23.46  size:  1955
+[libx264 @ 0x55a7e215e4e0] consecutive B-frames:  2.9%  0.0%  4.3% 92.8%
+[libx264 @ 0x55a7e215e4e0] mb I  I16..4: 10.7% 72.3% 17.0%
+[libx264 @ 0x55a7e215e4e0] mb P  I16..4:  3.9% 11.4%  1.3%  P16..4: 38.9% 14.2%  7.0%  0.0%  0.0%    skip:23.3%
+[libx264 @ 0x55a7e215e4e0] mb B  I16..4:  0.2%  0.3%  0.0%  B16..8: 12.9%  1.1%  0.2%  direct: 0.7%  skip:84.5%  L0:45.2% L1:48.0% BI: 6.8%
+[libx264 @ 0x55a7e215e4e0] 8x8 transform intra:68.8% inter:78.8%
+[libx264 @ 0x55a7e215e4e0] coded y,uvDC,uvAC intra: 50.7% 42.6% 7.6% inter: 9.0% 6.8% 0.0%
+[libx264 @ 0x55a7e215e4e0] i16 v,h,dc,p: 43% 19% 13% 26%
+[libx264 @ 0x55a7e215e4e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 18% 20%  4%  6%  7%  5%  5%  5%
+[libx264 @ 0x55a7e215e4e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 36% 16% 12%  3%  9% 12%  6%  4%  3%
+[libx264 @ 0x55a7e215e4e0] i8c dc,h,v,p: 54% 19% 24%  4%
+[libx264 @ 0x55a7e215e4e0] Weighted P-Frames: Y:11.1% UV:0.0%
+[libx264 @ 0x55a7e215e4e0] ref P L0: 63.8% 15.5% 13.9%  6.2%  0.7%
+[libx264 @ 0x55a7e215e4e0] ref B L0: 90.8%  6.2%  3.0%
+[libx264 @ 0x55a7e215e4e0] ref B L1: 97.6%  2.4%
+[libx264 @ 0x55a7e215e4e0] kb/s:1452.07
+20.0
+69.0
+trans_time: 1.5748870000000004
+piece_time: 1.950187
+piece_time: 1.985314
+piece_time: 1.995798
+piece_time: 2.0458250000000002
+piece_time: 2.014174
+piece_time: 1.936874
+piece_time: 1.965744
+piece_time: 2.0109019999999997
+piece_time: 1.981628
+piece_time: 2.010236
+piece_time: 2.047124
+piece_time: 1.9879390000000001
+piece_time: 1.989466
+piece_time: 1.9809260000000002
+piece_time: 2.142506
+piece_time: 1.98005
+piece_time: 2.006098
+piece_time: 2.0661150000000004
+piece_time: 2.0734879999999998
+piece_time: 2.0547060000000004
+piece_time: 1.9873290000000001
+piece_time: 2.092393
+piece_time: 2.137797
+dict: {9: 0.062380680375309056, 3: 0.06480566308803355, 15: 0.080972296937591, 6: 0.06479667000088381, 18: 0.30810502576089077, 21: 0.5429233485756769, 33: 1.2288119950035241, 0: 0.05010662695728381, 30: 1.184891223273847, 39: 0.7801423836060932, 54: 0.02755406166127636, 12: 0.06426009785774728, 27: 1.1260828002737464, 66: 0.02441313401629523, 36: 1.1214698965181895, 42: 0.519246300551522, 45: 0.09853500822411042, 24: 0.8595607979780941, 57: 0.022647185385319787, 51: 0.017467360797114598, 63: 0.02461425633612306, 48: 0.09775166916358209, 60: 0.02658122357041845, 10: 0.05779171326243465, 4: 0.05372971414839849, 16: 0.07363589443477732, 19: 0.30814082421005135, 22: 0.8619017926933504, 7: 0.06512283677100825, 34: 1.1792800709345497, 46: 0.07784982197128534, 37: 0.7647369250229009, 40: 0.5340709698852673, 28: 0.8365690456326202, 31: 1.1156933073558584, 55: 0.02076919561080578, 25: 1.0924712282284763, 1: 0.04946244271008657, 43: 0.0905095167788868, 67: 0.01697075512373836, 13: 0.06936881030688405, 58: 0.019674380945658022, 49: 0.08445540230757445, 64: 0.018881456660576147, 52: 0.016957895389424382, 61: 0.017268233014874408, 5: 0.056387045921767354, 11: 0.06052062644041112, 20: 0.5380418103253531, 8: 0.05821460909957654, 47: 0.08988418225113844, 23: 0.8585445364889924, 17: 0.3206469108053436, 26: 1.0774114424948615, 56: 0.022411452372132205, 68: 0.027536831871978164, 65: 0.02544740308909414, 38: 0.772524216469313, 2: 0.05619609363087344, 29: 0.8296916782612535, 14: 0.06694335510194188, 35: 1.1405206747546626, 41: 0.5284555953999867, 50: 0.015720270487692763, 59: 0.02281232940354216, 32: 1.2215606090856843, 44: 0.09359986661399501, 53: 0.018879991636005206, 62: 0.017624234406057426}
+0 0.05010662695728381
+1 0.04946244271008657
+2 0.05619609363087344
+3 0.06480566308803355
+4 0.05372971414839849
+5 0.056387045921767354
+6 0.06479667000088381
+7 0.06512283677100825
+8 0.05821460909957654
+9 0.062380680375309056
+10 0.05779171326243465
+11 0.06052062644041112
+12 0.06426009785774728
+13 0.06936881030688405
+14 0.06694335510194188
+15 0.080972296937591
+16 0.07363589443477732
+17 0.3206469108053436
+18 0.30810502576089077
+19 0.30814082421005135
+20 0.5380418103253531
+21 0.5429233485756769
+22 0.8619017926933504
+23 0.8585445364889924
+24 0.8595607979780941
+25 1.0924712282284763
+26 1.0774114424948615
+27 1.1260828002737464
+28 0.8365690456326202
+29 0.8296916782612535
+30 1.184891223273847
+31 1.1156933073558584
+32 1.2215606090856843
+33 1.2288119950035241
+34 1.1792800709345497
+35 1.1405206747546626
+36 1.1214698965181895
+37 0.7647369250229009
+38 0.772524216469313
+39 0.7801423836060932
+40 0.5340709698852673
+41 0.5284555953999867
+42 0.519246300551522
+43 0.0905095167788868
+44 0.09359986661399501
+45 0.09853500822411042
+46 0.07784982197128534
+47 0.08988418225113844
+48 0.09775166916358209
+49 0.08445540230757445
+50 0.015720270487692763
+51 0.017467360797114598
+52 0.016957895389424382
+53 0.018879991636005206
+54 0.02755406166127636
+55 0.02076919561080578
+56 0.022411452372132205
+57 0.022647185385319787
+58 0.019674380945658022
+59 0.02281232940354216
+60 0.02658122357041845
+61 0.017268233014874408
+62 0.017624234406057426
+63 0.02461425633612306
+64 0.018881456660576147
+65 0.02544740308909414
+66 0.02441313401629523
+67 0.01697075512373836
+68 0.027536831871978164
+time: 0.13563599999999987
+1
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:42:01] "POST /face/action_detect/month_open_detect/ HTTP/1.1" 200 53
+[09/May/2019 15:42:01] "GET /accounts/login/ HTTP/1.1" 200 2710
+[09/May/2019 15:42:19] "GET /face/action_detect/ HTTP/1.1" 200 9040
+[09/May/2019 15:42:19] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:42:19] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:42:19] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:42:20] "GET /static/images/webrtc-icon-192x192.png HTTP/1.1" 200 31806
+[09/May/2019 15:45:37] "GET /accounts/login/ HTTP/1.1" 200 2782
+[09/May/2019 15:45:39] "GET /face/action_detect/ HTTP/1.1" 200 9114
+[09/May/2019 15:45:40] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:45:40] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:45:40] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 1k tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x563cd5dfcc80] using SAR=1/1
+[libx264 @ 0x563cd5dfcc80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x563cd5dfcc80] profile High, level 3.1
+[libx264 @ 0x563cd5dfcc80] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   53 fps=0.0 q=28.0 size=       0kB time=00:00:00.00 bitrate=3918.4kbits/s dup=0 drop=23 speed=0.000193x    frame=   79 fps= 50 q=-1.0 Lsize=     569kB time=00:00:03.80 bitrate=1226.1kbits/s dup=0 drop=36 speed=2.41x    
+video:567kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.310199%
+[libx264 @ 0x563cd5dfcc80] frame I:1     Avg QP:21.65  size: 54326
+[libx264 @ 0x563cd5dfcc80] frame P:20    Avg QP:22.49  size: 16401
+[libx264 @ 0x563cd5dfcc80] frame B:58    Avg QP:24.79  size:  3406
+[libx264 @ 0x563cd5dfcc80] consecutive B-frames:  1.3%  2.5%  0.0% 96.2%
+[libx264 @ 0x563cd5dfcc80] mb I  I16..4:  8.0% 80.4% 11.6%
+[libx264 @ 0x563cd5dfcc80] mb P  I16..4:  1.4%  2.7%  0.0%  P16..4: 55.0% 12.8%  9.2%  0.0%  0.0%    skip:18.9%
+[libx264 @ 0x563cd5dfcc80] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8: 39.2%  0.8%  0.1%  direct: 2.9%  skip:56.8%  L0:47.7% L1:50.7% BI: 1.6%
+[libx264 @ 0x563cd5dfcc80] 8x8 transform intra:73.3% inter:89.1%
+[libx264 @ 0x563cd5dfcc80] coded y,uvDC,uvAC intra: 55.8% 85.0% 51.8% inter: 10.4% 28.9% 2.0%
+[libx264 @ 0x563cd5dfcc80] i16 v,h,dc,p: 15% 29%  9% 47%
+[libx264 @ 0x563cd5dfcc80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 25% 26%  4%  6%  5%  7%  4%  7%
+[libx264 @ 0x563cd5dfcc80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 36%  9%  3%  6%  6%  5%  4%  4%
+[libx264 @ 0x563cd5dfcc80] i8c dc,h,v,p: 54% 27% 15%  4%
+[libx264 @ 0x563cd5dfcc80] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x563cd5dfcc80] ref P L0: 50.4%  7.0% 31.4% 11.2%
+[libx264 @ 0x563cd5dfcc80] ref B L0: 80.3% 16.2%  3.5%
+[libx264 @ 0x563cd5dfcc80] ref B L1: 91.3%  8.7%
+[libx264 @ 0x563cd5dfcc80] kb/s:1174.49
+20.0
+79.0
+trans_time: 1.8815499999999998
+piece_time: 2.016309
+piece_time: 2.551292
+piece_time: 2.533785
+piece_time: 2.618587
+piece_time: 2.5685379999999998
+piece_time: 2.5583780000000003
+piece_time: 2.645756
+piece_time: 2.618614
+piece_time: 2.612781
+piece_time: 2.627001
+piece_time: 2.6164430000000003
+piece_time: 2.660892
+piece_time: 2.652932
+piece_time: 2.595373
+piece_time: 2.628892
+piece_time: 2.633461
+piece_time: 2.616876
+piece_time: 2.646426
+piece_time: 2.6563470000000002
+piece_time: 2.642559
+dict: {8: 0.019588788920344352, 0: 0.020744860365868346, 4: 0.021053870168889686, 12: 0.014691591690258264, 16: 0.045585539820654046, 20: 0.1869458139985671, 24: 0.3072786315018483, 32: 0.8360922588011949, 48: 0.008995876335833408, 60: 0.008438142567597428, 28: 0.7491348928429806, 68: 0.00843611554849441, 44: 0.13763749241454343, 36: 0.6967047778625146, 52: 0.004325722431639943, 40: 0.4927086654339816, 72: 0.008655089572066616, 76: 0.004327544786033308, 56: 0.00438444701470547, 64: 0.0, 9: 0.014046765786263305, 1: 0.004893501829289195, 5: 0.011822879970489787, 21: 0.21533830016082933, 13: 0.011822879970489787, 17: 0.05665776936998159, 49: 0.008869201403169857, 25: 0.3809811962254633, 69: 0.0085442002641836, 53: 0.0, 33: 0.8868293251126399, 73: 0.008546306216710552, 61: 0.004218057774247205, 29: 0.8229129404432762, 41: 0.4774332816356148, 65: 0.014585862210803713, 45: 0.04124751459613092, 57: 0.008655089572066616, 77: 0.0042721001320918, 37: 0.661369956687755, 10: 0.009794394460172176, 14: 0.01847736084923302, 2: 0.02076136996343499, 50: 0.014768940193166618, 6: 0.018734415138245853, 70: 0.005965234511213669, 54: 0.004270346900133822, 18: 0.111624152665371, 22: 0.21351086001659603, 26: 0.6184842155476207, 62: 0.00604315107993278, 34: 0.8181924531027781, 30: 0.8049410328534158, 42: 0.28774998945056723, 74: 0.0061216204114949895, 38: 0.5907707935497937, 46: 0.01578220777502662, 66: 0.004219071283798714, 58: 0.004218057774247205, 78: 0.0, 11: 0.016720077200575875, 71: 0.006041661946620115, 15: 0.020777048221211104, 51: 0.0043825518570570834, 55: 0.008651444863279886, 31: 0.8492811392174887, 43: 0.26179516741403713, 63: 0.008438142567597428, 7: 0.018734415138245853, 19: 0.11980913912292782, 39: 0.5306006266844469, 3: 0.018734415138245853, 23: 0.22027903541988475, 27: 0.6245876770752893, 35: 0.7422902416940822, 75: 0.008655089572066616, 59: 0.004273153108355276, 47: 0.004562359050233004, 67: 0.015950533599678348}
+0 0.020744860365868346
+1 0.004893501829289195
+2 0.02076136996343499
+3 0.018734415138245853
+4 0.021053870168889686
+5 0.011822879970489787
+6 0.018734415138245853
+7 0.018734415138245853
+8 0.019588788920344352
+9 0.014046765786263305
+10 0.009794394460172176
+11 0.016720077200575875
+12 0.014691591690258264
+13 0.011822879970489787
+14 0.01847736084923302
+15 0.020777048221211104
+16 0.045585539820654046
+17 0.05665776936998159
+18 0.111624152665371
+19 0.11980913912292782
+20 0.1869458139985671
+21 0.21533830016082933
+22 0.21351086001659603
+23 0.22027903541988475
+24 0.3072786315018483
+25 0.3809811962254633
+26 0.6184842155476207
+27 0.6245876770752893
+28 0.7491348928429806
+29 0.8229129404432762
+30 0.8049410328534158
+31 0.8492811392174887
+32 0.8360922588011949
+33 0.8868293251126399
+34 0.8181924531027781
+35 0.7422902416940822
+36 0.6967047778625146
+37 0.661369956687755
+38 0.5907707935497937
+39 0.5306006266844469
+40 0.4927086654339816
+41 0.4774332816356148
+42 0.28774998945056723
+43 0.26179516741403713
+44 0.13763749241454343
+45 0.04124751459613092
+46 0.01578220777502662
+47 0.004562359050233004
+48 0.008995876335833408
+49 0.008869201403169857
+50 0.014768940193166618
+51 0.0043825518570570834
+52 0.004325722431639943
+53 0.0
+54 0.004270346900133822
+55 0.008651444863279886
+56 0.00438444701470547
+57 0.008655089572066616
+58 0.004218057774247205
+59 0.004273153108355276
+60 0.008438142567597428
+61 0.004218057774247205
+62 0.00604315107993278
+63 0.008438142567597428
+64 0.0
+65 0.014585862210803713
+66 0.004219071283798714
+67 0.015950533599678348
+68 0.00843611554849441
+69 0.0085442002641836
+70 0.005965234511213669
+71 0.006041661946620115
+72 0.008655089572066616
+73 0.008546306216710552
+74 0.0061216204114949895
+75 0.008655089572066616
+76 0.004327544786033308
+77 0.0042721001320918
+78 0.0
+time: 0.1516029999999997
+1
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:46:15] "POST /face/action_detect/month_open_detect/ HTTP/1.1" 200 53
+[09/May/2019 15:46:21] "GET /accounts/profile/ HTTP/1.1" 302 0
+[09/May/2019 15:46:21] "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 2782
+[09/May/2019 15:46:32] "GET /face/action_detect/ HTTP/1.1" 200 9102
+[09/May/2019 15:46:32] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:46:32] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:46:32] "GET /static/css/main(1).css HTTP/1.1" 200 623
+ffmpeg version 3.4.4-0ubuntu0.18.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.3.0-16ubuntu3)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.18.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, matroska,webm, from 'temp.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 1280x720, SAR 1:1 DAR 16:9, 1k tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      alpha_mode      : 1
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x5566598407e0] using SAR=1/1
+[libx264 @ 0x5566598407e0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x5566598407e0] profile High, level 3.1
+[libx264 @ 0x5566598407e0] 264 - core 152 r2854 e9a5903 - H.264/MPEG-4 AVC codec - Copyleft 2003-2017 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=20 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'temp.mp4':
+  Metadata:
+    encoder         : Lavf57.83.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 20 fps, 10240 tbn, 20 tbc (default)
+    Metadata:
+      alpha_mode      : 1
+      encoder         : Lavc57.107.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=   52 fps=0.0 q=28.0 size=       0kB time=-00:00:00.04 bitrate=N/A dup=0 drop=15 speed=N/A    frame=   59 fps= 37 q=-1.0 Lsize=     897kB time=00:00:02.80 bitrate=2624.2kbits/s dup=0 drop=18 speed=1.75x    
+video:895kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.170237%
+[libx264 @ 0x5566598407e0] frame I:1     Avg QP:24.17  size: 80682
+[libx264 @ 0x5566598407e0] frame P:15    Avg QP:23.33  size: 31052
+[libx264 @ 0x5566598407e0] frame B:43    Avg QP:25.96  size:  8600
+[libx264 @ 0x5566598407e0] consecutive B-frames:  1.7%  3.4%  0.0% 94.9%
+[libx264 @ 0x5566598407e0] mb I  I16..4:  2.1% 89.8%  8.0%
+[libx264 @ 0x5566598407e0] mb P  I16..4:  2.4% 12.3%  0.5%  P16..4: 50.1% 19.4% 10.7%  0.0%  0.0%    skip: 4.7%
+[libx264 @ 0x5566598407e0] mb B  I16..4:  0.3%  1.2%  0.0%  B16..8: 50.4%  3.6%  0.6%  direct: 6.1%  skip:37.9%  L0:52.3% L1:40.4% BI: 7.3%
+[libx264 @ 0x5566598407e0] 8x8 transform intra:83.2% inter:85.3%
+[libx264 @ 0x5566598407e0] coded y,uvDC,uvAC intra: 68.0% 89.7% 53.5% inter: 22.3% 38.1% 4.1%
+[libx264 @ 0x5566598407e0] i16 v,h,dc,p: 14% 34% 17% 35%
+[libx264 @ 0x5566598407e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 19% 28%  5%  7%  5%  8%  6%  8%
+[libx264 @ 0x5566598407e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 23% 14%  6%  9%  8%  7%  6%  7%
+[libx264 @ 0x5566598407e0] i8c dc,h,v,p: 56% 23% 16%  6%
+[libx264 @ 0x5566598407e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x5566598407e0] ref P L0: 47.7% 11.2% 31.3%  9.8%
+[libx264 @ 0x5566598407e0] ref B L0: 85.9% 11.4%  2.8%
+[libx264 @ 0x5566598407e0] ref B L1: 92.0%  8.0%
+[libx264 @ 0x5566598407e0] kb/s:2484.80
+20.0
+59.0
+piece_time: 1.3125339999999999
+piece_time: 1.9292440000000002
+piece_time: 1.898946
+piece_time: 1.907002
+piece_time: 1.9051909999999999
+piece_time: 1.954756
+piece_time: 1.89453
+piece_time: 1.943364
+piece_time: 1.9476689999999999
+piece_time: 1.9510960000000002
+piece_time: 1.984901
+piece_time: 1.922568
+piece_time: 1.935408
+piece_time: 1.927256
+piece_time: 1.9040700000000002
+piece_time: 1.9388239999999999
+piece_time: 1.9538719999999998
+piece_time: 1.939954
+piece_time: 1.971334
+piece_time: 1.958688
+0 : (0.3275608910402092, 0.3371229406805562)
+1 : (0.33014665723981546, 0.3599969443359872)
+2 : (0.3394663944081627, 0.34291755464763635)
+3 : (0.3124501872954515, 0.35093607222857803)
+4 : (0.327308727002248, 0.3401670420166294)
+5 : (0.3390695398679186, 0.351904537952251)
+6 : (0.351791536114398, 0.3599969443359872)
+7 : (0.33030448371233445, 0.34122256215725594)
+8 : (0.33630805284902676, 0.35949397363240354)
+9 : (0.34253386411138753, 0.34045075666926117)
+10 : (0.31459911433398224, 0.33393036480702737)
+11 : (0.28313146761731683, 0.2963188789948769)
+12 : (0.15287696820810648, 0.16587148352271208)
+13 : (0.2776337355804097, 0.3028912664076913)
+14 : (0.15008075996357095, 0.16430400877102427)
+15 : (0.20319950199062503, 0.22249707974499242)
+16 : (0.28684036895157206, 0.29154447996745103)
+17 : (0.3053461992065122, 0.31025574443097026)
+18 : (0.31812923918151176, 0.346847903565947)
+19 : (0.33636363636363636, 0.34045075666926117)
+20 : (0.33630805284902676, 0.3413430026913604)
+21 : (0.345636489181045, 0.35949397363240354)
+22 : (0.336560341854719, 0.3588784345919425)
+23 : (0.34569361445854957, 0.36733092545950896)
+24 : (0.34569361445854957, 0.35312792188573433)
+25 : (0.3392316319207759, 0.36733092545950896)
+26 : (0.3394663944081627, 0.3588666074008751)
+27 : (0.3394663944081627, 0.35057505998996086)
+28 : (0.33030448371233445, 0.36833028594989936)
+29 : (0.32752505797563586, 0.3571980041158288)
+30 : (0.32480488050280654, 0.3598669048927815)
+31 : (0.3332820473366711, 0.3571980041158288)
+32 : (0.3392316319207759, 0.3666044702832666)
+33 : (0.3394663944081627, 0.35057505998996086)
+34 : (0.2982456140350877, 0.33839922661928123)
+35 : (0.3181818181818182, 0.3473020479336705)
+36 : (0.2777777777777778, 0.30594465925485714)
+37 : (0.19017366789205764, 0.20810866731871766)
+38 : (0.40280598757035213, 0.4325636460965448)
+39 : (0.3777566222560898, 0.40215771761662217)
+40 : (0.3631315440037886, 0.38573439019072797)
+41 : (0.3472906187309719, 0.3794067527261395)
+42 : (0.18200105227046312, 0.20171724234794683)
+43 : (0.22644502265891311, 0.2519282074034117)
+44 : (0.2818181818181818, 0.3065847724133865)
+45 : (0.30935805787205817, 0.3251698089478442)
+46 : (0.3090398323477543, 0.32978648257257487)
+47 : (0.30935805787205817, 0.3257838193332408)
+48 : (0.3090909090909091, 0.3251698089478442)
+49 : (0.30935805787205817, 0.34576211224098896)
+50 : (0.3090909090909091, 0.34576211224098896)
+51 : (0.29464285714285715, 0.34300708279054054)
+52 : (0.3057752254364527, 0.3155038512013637)
+53 : (0.31844896696296726, 0.3347493882335902)
+54 : (0.3210319468483623, 0.3347493882335902)
+55 : (0.309306936983025, 0.3236673755868528)
+56 : (0.31503289743946317, 0.3347493882335902)
+57 : (0.3150869107956148, 0.32508343048710975)
+58 : (0.3147608481023561, 0.32839729824615543)
+[ INFO:0] global /root/opencv/modules/videoio/src/videoio_registry.cpp (185) VideoBackendRegistry VIDEOIO: Enabled backends(5, sorted by priority): FFMPEG(1000); GSTREAMER(990); V4L2(980); CV_IMAGES(970); CV_MJPEG(960)
+[09/May/2019 15:47:01] "POST /face/action_detect/eye_blink_detect/ HTTP/1.1" 200 54
+[09/May/2019 15:47:06] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:47:07] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:47:07] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:47:07] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:47:07] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:47:07] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:47:07] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:47:08] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:47:08] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:47:08] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:47:08] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:47:08] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:47:08] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:47:08] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:47:08] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:47:09] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:47:09] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:47:09] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:47:14] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:47:14] "GET /accounts/login/ HTTP/1.1" 200 2782
+[09/May/2019 15:48:03] "GET /accounts/login/ HTTP/1.1" 200 2716
