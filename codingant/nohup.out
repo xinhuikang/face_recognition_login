@@ -2381,3 +2381,124 @@ piece_time: 1.958688
 [09/May/2019 15:47:14] "GET /accounts/signout/ HTTP/1.1" 302 0
 [09/May/2019 15:47:14] "GET /accounts/login/ HTTP/1.1" 200 2782
 [09/May/2019 15:48:03] "GET /accounts/login/ HTTP/1.1" 200 2716
+[09/May/2019 15:49:45] "GET /accounts/login/ HTTP/1.1" 200 2716
+[09/May/2019 15:49:49] "GET /face/action_detect/ HTTP/1.1" 200 9114
+[09/May/2019 15:49:49] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:49:49] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:49:49] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:49:52] "GET /accounts/login/ HTTP/1.1" 200 2716
+[09/May/2019 15:49:54] "GET /face/login/ HTTP/1.1" 200 4586
+[09/May/2019 15:49:54] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:49:54] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:49:54] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:50:22] "GET /face/login/ HTTP/1.1" 200 4586
+[09/May/2019 15:50:22] "GET /static/css/css HTTP/1.1" 200 9268
+[09/May/2019 15:50:22] "GET /static/css/main.css HTTP/1.1" 200 3654
+[09/May/2019 15:50:23] "GET /static/css/main(1).css HTTP/1.1" 200 623
+[09/May/2019 15:50:54] "POST /face/login/loginFaceCheck/ HTTP/1.1" 200 38
+[09/May/2019 15:50:58] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:50:59] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:50:59] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:50:59] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:50:59] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:50:59] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:50:59] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:51:00] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:51:00] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:51:00] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:51:00] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:51:00] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:51:00] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:51:00] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:51:00] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:51:01] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:51:01] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:51:01] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:51:02] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:51:02] "GET /accounts/login/ HTTP/1.1" 200 2716
+[09/May/2019 15:51:10] "POST /face/login/loginFaceCheck/ HTTP/1.1" 200 38
+[09/May/2019 15:51:13] "GET /accounts/profile/ HTTP/1.1" 200 39669
+[09/May/2019 15:51:14] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+[09/May/2019 15:51:14] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 31000
+[09/May/2019 15:51:14] "GET /static/bower_components/Ionicons/css/ionicons.min.css HTTP/1.1" 200 51284
+[09/May/2019 15:51:14] "GET /static/dist/css/AdminLTE.min.css HTTP/1.1" 200 91475
+[09/May/2019 15:51:15] "GET /static/dist/css/skins/_all-skins.min.css HTTP/1.1" 200 41583
+[09/May/2019 15:51:15] "GET /static/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css HTTP/1.1" 200 15731
+[09/May/2019 15:51:15] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 86927
+[09/May/2019 15:51:15] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[09/May/2019 15:51:15] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+[09/May/2019 15:51:16] "GET /static/dist/js/adminlte.min.js HTTP/1.1" 200 14478
+[09/May/2019 15:51:16] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 200 51679
+[09/May/2019 15:51:16] "GET /static/bower_components/fastclick/lib/fastclick.js HTTP/1.1" 200 25965
+[09/May/2019 15:51:16] "GET /static/bower_components/bootstrap-daterangepicker/daterangepicker.js HTTP/1.1" 200 71115
+[09/May/2019 15:51:16] "GET /static/dist/js/demo.js HTTP/1.1" 200 18608
+[09/May/2019 15:51:16] "GET /static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js HTTP/1.1" 200 33599
+[09/May/2019 15:51:16] "GET /static/plugins/timepicker/bootstrap-timepicker.min.js HTTP/1.1" 200 18685
+[09/May/2019 15:51:16] "GET /static/dist/img/user2-160x160.jpg HTTP/1.1" 200 7070
+[09/May/2019 15:51:19] "GET /accounts/signout/ HTTP/1.1" 302 0
+[09/May/2019 15:51:19] "GET /accounts/login/ HTTP/1.1" 200 2716
+[09/May/2019 15:51:30] "GET /temp.webm HTTP/1.1" 200 1206079
+[09/May/2019 18:38:28] "GET /accounts/login/ HTTP/1.1" 200 2716
+----------------------------------------
+Exception happened during processing of request from ('180.76.113.102', 45472)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 317, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 348, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 721, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 139, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.6/ssl.py", line 1014, in recv_into
+    return socket.recv_into(self, buffer, nbytes, flags)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+Invalid HTTP_HOST header: 'vultr.guest:8000'. You may need to add 'vultr.guest' to ALLOWED_HOSTS.
+Bad Request: /
+[09/May/2019 21:32:18] "GET / HTTP/1.0" 400 59632
+Invalid HTTP_HOST header: 'vultr.guest:8000'. You may need to add 'vultr.guest' to ALLOWED_HOSTS.
+Bad Request: /
+[09/May/2019 21:32:22] "OPTIONS / HTTP/1.0" 400 59660
+[09/May/2019 21:32:25] code 400, message Bad request version ('RTSP/1.0')
+[09/May/2019 21:32:25] "OPTIONS / RTSP/1.0" 400 -
+[09/May/2019 21:32:30] code 400, message Bad request version ('\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[09/May/2019 21:32:30] "  (rþ          |                    " 400 -
+[09/May/2019 21:32:36] code 400, message Bad HTTP/0.9 request type ('\x00')
+[09/May/2019 21:32:36] "          versionbind   " 400 -
+[09/May/2019 21:32:41] code 400, message Bad HTTP/0.9 request type ('\x00')
+[09/May/2019 21:32:41] "            " 400 -
+[09/May/2019 21:32:42] code 400, message Bad request syntax ('HELP')
+[09/May/2019 21:32:42] "HELP" 400 -
+[09/May/2019 21:32:44] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G×÷º,îê²`~ó\x00ý\x82{¹Õ\x96Èw\x9bæÄÛ<=Ûoï\x10n\x00\x00(\x00\x16\x00\x13\x00')
+[09/May/2019 21:32:44] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[09/May/2019 21:32:44] code 400, message Bad request syntax ('\x00\x00\x00qj\x81n0\x81k¡\x03\x02\x01\x05¢\x03\x02\x01')
+[09/May/2019 21:32:44] "   qjn0k¡¢" 400 -
+[09/May/2019 21:32:50] code 400, message Bad request syntax ('\x00\x00\x00¤ÿSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00')
+[09/May/2019 21:32:50] "   ¤ÿSMBr    @              @     PC NETWORK PROGRAM 1.0 MICROSOFT NETWORKS 1.03 MICROSOFT NETWORKS 3.0 LANMAN1.0 LM1.2X002 Samba NT LANMAN 1.0 NT LM 0.12 " 400 -
+[09/May/2019 21:32:58] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[09/May/2019 21:32:58] "l          " 400 -
+Invalid HTTP_HOST header: 'vultr.guest:8000'. You may need to add 'vultr.guest' to ALLOWED_HOSTS.
+Bad Request: /nice ports,/Trinity.txt.bak
+[09/May/2019 21:32:59] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 400 59941
+[09/May/2019 21:33:01] code 400, message Bad request syntax ('\x01default')
+[09/May/2019 21:33:01] "default" 400 -
+[09/May/2019 21:33:06] code 400, message Bad HTTP/0.9 request type ('0')
+[09/May/2019 21:33:06] "0`  " 400 -
+[09/May/2019 21:33:12] code 400, message Bad request version ('SIP/2.0')
+[09/May/2019 21:33:12] "OPTIONS sip:nm SIP/2.0" 400 -
+[09/May/2019 21:33:19] code 400, message Bad request syntax ('TNMP\x04\x00\x00\x00TNME\x00\x00\x04\x00')
+[09/May/2019 21:33:19] "TNMP   TNME   " 400 -
+[09/May/2019 21:33:24] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00')
+[09/May/2019 21:33:24] "  à     " 400 -
+[09/May/2019 21:33:31] code 400, message Bad request syntax ('DmdT\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x00\x11\x11\x00ÿ\x01ÿ\x13')
+[09/May/2019 21:33:31] "DmdT           ÿÿ" 400 -
+[09/May/2019 21:33:41] code 400, message Bad HTTP/0.9 request type (':\x00\x00\x00/\x00\x00\x00\x02\x00\x00@\x02\x0f\x00\x01\x00=\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x00\x00\x00\x00\x00\x00\x00\x00\x00@')
+[09/May/2019 21:33:41] ":   /     @  =            /         @                 " 400 -
+[09/May/2019 21:33:48] code 400, message Bad request syntax ('\x01\x00\x00ýÎú\x0b°\xa0\x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00ðððð\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00àmß_')
+[09/May/2019 21:33:48] "  ýÎú°    MMS                    ðððð    N S P l a y e r / 9 . 0 . 0 . 2 9 8 0 ;   { 0 0 0 0 A A 0 0 - 0 A 0 0 - 0 0 a 0 - A A 0 A - 0 0 0 0 A 0 A A 0 A A 0 }   àmß_" 400 -
