@@ -50,6 +50,7 @@ if len(sys.argv) != 2:
         "execute this program by running:\n"
         "    python train_shape_predictor.py total")
     exit()
+start = time.clock()
 faces_folder = sys.argv[1]
 
 options = dlib.shape_predictor_training_options()
@@ -96,7 +97,7 @@ print("Testing accuracy: {}".format(
 # estimate of the facial location.
 predictor = dlib.shape_predictor("predictor.dat")
 detector = dlib.get_frontal_face_detector()
-
+print("time: ", time.clock() - start)
 # Now let's run the detector and shape_predictor over the images in the faces
 # folder and display the results.
 # print("Showing detections and predictions on the images in the faces folder...")
