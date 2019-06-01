@@ -36,6 +36,7 @@
 import os
 import sys
 import glob
+import time
 
 import dlib
 
@@ -63,7 +64,7 @@ options = dlib.shape_predictor_training_options()
 # have a very small dataset.  In particular, setting the oversampling
 # to a high amount (300) effectively boosts the training set size, so
 # that helps this example.
-options.oversampling_amount = 10
+options.oversampling_amount = 100
 # I'm also reducing the capacity of the model by explicitly increasing
 # the regularization (making nu smaller) and by using trees with
 # smaller depths.
