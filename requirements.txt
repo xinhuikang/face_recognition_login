@@ -1,4 +1,4 @@
-Django==2.1
+Django==2.2.13
 django-appconf==1.0.2
 django-crispy-forms==1.7.2
 django-suit==2.0a1
